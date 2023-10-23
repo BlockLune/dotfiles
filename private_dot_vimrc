@@ -31,6 +31,7 @@ Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 " nerdtree
+nnoremap <C-n> :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 
 " lightline.vim
