@@ -119,6 +119,13 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 
 eval $(thefuck --alias) # thefuck required
-alias cd='z'  # zoxide required
+
 alias ll='lsd -l'  # lsd required
-alias hx='helix'  # helix required, only on archlinux
+if [[ -r /etc/os-release ]]; then
+    . /etc/os-release
+    if [[ $ID == "arch" || $ID == "archarm" ]]; then
+        alias hx='helix'  # helix required, only on arch
+    elif [[ $ID == "ubuntu" ]]; then
+        alias bat='batcat'  # bat required, only on ubuntu
+    fi
+fi
