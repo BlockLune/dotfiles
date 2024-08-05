@@ -1,0 +1,70 @@
+# My aliases
+# References:
+# - https://lift.cs.princeton.edu/java/.bashrc
+# - https://github.com/mathiasbynens/dotfiles/blob/main/.aliases
+# - and more
+
+# Directories
+alias ..="cd .."
+alias md="mkdir -p"
+
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+	colorflag="--color"
+else # macOS `ls`
+	colorflag="-G"
+fi
+
+# ls
+alias ls="ls -F ${colorflag}" 
+alias ll="ls -lh"
+alias la="ls -A"
+alias l="ll -A"
+
+# interactive
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
+alias ln="ln -i"
+
+# pagers
+alias less="less --quit-at-eof --no-init --tabs=4 --RAW-CONTROL-CHARS"
+alias more="less"
+
+# grep
+alias grep="grep --color=auto"
+alias egrep="grep -E --color=auto"
+alias fgrep="grep -F --color=auto"
+alias rg="rg --smart-case --color=auto"
+
+# git
+alias g="git"
+alias ga="git add --verbose"
+alias gaa="git add --all --verbose"
+alias gb="git branch"
+alias gc!="git commit --verbose --amend"
+alias gc="git commit --verbose"
+alias gcb="git checkout -b"
+alias gcl="git clone --recurse-submodules"
+alias gco="git checkout"
+alias gcp="git cherry-pick"
+alias gd="git diff"
+alias gf="git fetch"
+alias gl="git pull"
+alias glog="git log --oneline --decorate --graph"
+alias gm="git merge"
+alias gp="git push"
+alias gr="git remote"
+alias grb="git rebase"
+alias grf="git reflog"
+alias grhh="git reset --hard"
+alias grm="git rm"
+alias grs="git restore"
+alias grst="git restore --staged"
+alias gsh="git show"
+alias gss="git status --short"
+alias gst="git status"
+alias gsta="git stash push"
+
+# npm
+alias cnpm="npm --registry=https://registry.npmmirror.com  --cache=$HOME/.npm/.cache/cnpm  --disturl=https://npmmirror.com/mirrors/node  --userconfig=$HOME/.cnpmrc"

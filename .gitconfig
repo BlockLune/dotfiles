@@ -1,0 +1,16 @@
+[user]
+	name = BlockLune
+	email = 39331194+BlockLune@users.noreply.github.com
+[init]
+	defaultBranch = main
+[diff]
+	tool = vimdiff
+[core]
+	quotepath = false
+    editor = vim
+    excludesfile = ~/.gitignore
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+    ui = true

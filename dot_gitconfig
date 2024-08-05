@@ -1,9 +1,0 @@
-[user]
-	name = BlockLune
-	email = 39331194+BlockLune@users.noreply.github.com
-[diff]
-	tool = vimdiff
-[core]
-	editor = vim
-[alias]
-	lol = log --graph --oneline --decorate --color --all
