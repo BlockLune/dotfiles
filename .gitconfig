@@ -7,10 +7,12 @@
 	tool = vimdiff
 [core]
 	quotepath = false
-    editor = vim
-    excludesfile = ~/.gitignore
+  editor = vim
+  excludesfile = ~/.gitignore
 [color]
-    branch = auto
-    diff = auto
-    status = auto
-    ui = true
+  branch = auto
+  diff = auto
+  status = auto
+  ui = true
+[push]
+	autoSetupRemote = true
