@@ -65,6 +65,3 @@ alias gsh="git show"
 alias gss="git status --short"
 alias gst="git status"
 alias gsta="git stash push"
-
-# npm
-alias cnpm="npm --registry=https://registry.npmmirror.com  --cache=$HOME/.npm/.cache/cnpm  --disturl=https://npmmirror.com/mirrors/node  --userconfig=$HOME/.cnpmrc"
