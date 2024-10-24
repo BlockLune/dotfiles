@@ -36,10 +36,12 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.rulers": [80, 120],
   "editor.stickyScroll.enabled": true,
+  "editor.tabSize": 4,
   "explorer.confirmDelete": false,
   "extensions.ignoreRecommendations": true,
   "files.autoGuessEncoding": true,
   "files.autoSave": "onFocusChange",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.camelCaseMotion.enable": true,
   "vim.easymotion": false,
@@ -47,18 +49,32 @@
   "vim.hlsearch": true,
   "vim.ignorecase": true,
   "vim.incsearch": true,
-  "vim.insertModeKeyBindings": [{ "after": ["<esc>"], "before": ["j", "k"] }],
+  "vim.insertModeKeyBindings": [{ "before": ["j", "k"], "after": ["<esc>"] }],
   "vim.leader": "<space>",
   "vim.normalModeKeyBindings": [
-    { "after": ["g", "j"], "before": ["j"] },
-    { "after": ["g", "k"], "before": ["k"] },
+    // navigate
+    { "before": ["j"], "after": ["g", "j"] },
+    { "before": ["k"], "after": ["g", "k"] },
+    // file and directory
+    { "before": ["<leader>", "e"], "commands": ["workbench.view.explorer"] },
+    { "before": ["<leader>", "<leader>"], "commands": ["workbench.action.quickOpen"] },
+    // problems and quickfix
+    { "before": ["<leader>", "x", "q"], "commands": ["editor.action.quickFix"] },
+    { "before": ["<leader>", "x", "x"], "commands": ["workbench.actions.view.problems"] },
+    // buffer, tab and window
+    { "before": ["<s-h>"], "commands": [":bprev"] },
+    { "before": ["<s-l>"], "commands": [":bnext"] },
+    { "before": ["[", "b"], "commands": [":bprev"] },
+    { "before": ["]", "b"], "commands": [":bnext"] },
+    { "before": ["<leader>", "b", "d"], "commands": [":bd"] },
+    { "before": ["<leader>", "b", "o"], "commands": [":tabonly"] },
     { "before": ["<leader>", "-"], "commands": [":sp"] },
     { "before": ["<leader>", "|"], "commands": [":vsp"] },
-    { "before": ["<leader>", "e"], "commands": ["workbench.view.explorer"] },
-    {
-      "before": ["<leader>", "<leader>"],
-      "commands": ["workbench.action.quickOpen"]
-    }
+    // terminal
+    { "before": ["<c-/>"], "commands": ["workbench.action.terminal.toggleTerminal"] }
+    // tricks and tips: from https://github.com/VSCodeVim/Vim?tab=readme-ov-file#-vscodevim-tricks
+    // gd: go to definition
+    // gh: show hover (just like K in lazyvim)
   ],
   "vim.smartRelativeLine": true,
   "vim.smartcase": true,
@@ -67,6 +83,10 @@
   "vim.visualModeKeyBindings": [
     { "before": ["j"], "after": ["g", "j"] },
     { "before": ["k"], "after": ["g", "k"] }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // paste without overriding the current register
+    { "before": ["p"], "after": ["p", "g", "v", "y"] }
   ],
   "vim.visualstar": true,
   "workbench.colorTheme": "Dracula Theme",
