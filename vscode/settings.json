@@ -89,6 +89,7 @@
     { "before": ["p"], "after": ["p", "g", "v", "y"] }
   ],
   "vim.visualstar": true,
+  "workbench.activityBar.orientation": "vertical",
   "workbench.colorTheme": "Dracula Theme",
   "workbench.iconTheme": "material-icon-theme"
 }
