@@ -1,7 +1,7 @@
 let mapleader = " "
 set backspace=indent,eol,start
-set cursorcolumn
-set cursorline 
+set clipboard=unnamedplus
+set encoding=utf-8
 set hidden
 set ignorecase
 set incsearch
@@ -56,6 +56,7 @@ Plug 'mileszs/ack.vim'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-pathogen'
 Plug 'tpope/vim-sensible'

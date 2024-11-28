@@ -34,9 +34,10 @@ zstyle ':omz:update' mode reminder
 plugins=(
   fast-syntax-highlighting
   history-substring-search 
+  you-should-use
   z
   zsh-autosuggestions 
-  zsh-osx-autoproxy # optional
+  # zsh-osx-autoproxy # optional
 )
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white'
 source $ZSH/oh-my-zsh.sh

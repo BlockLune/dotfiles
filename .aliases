@@ -38,7 +38,6 @@ alias fgrep="grep -F --color=auto"
 alias rg="rg --smart-case --color=auto"
 
 # git
-alias g="git"
 alias ga="git add --verbose"
 alias gaa="git add --all --verbose"
 alias gb="git branch"
@@ -65,3 +64,6 @@ alias gsh="git show"
 alias gss="git status --short"
 alias gst="git status"
 alias gsta="git stash push"
+
+# https://github.com/zdharma-continuum/fast-syntax-highlighting/issues/13
+alias code="/mnt/c/Users/AlittleFish/AppData/Local/Programs/Microsoft VS Code/bin/code"
