@@ -16,7 +16,11 @@ else # macOS `ls`
 fi
 
 # ls
-alias ls="ls -F ${colorflag}" 
+if command -v lsd &> /dev/null; then
+  alias ls='lsd -F'
+else
+  alias ls="ls -F ${colorflag}" 
+fi
 alias ll="ls -lh"
 alias la="ls -A"
 alias l="ll -A"
