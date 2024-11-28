@@ -33,6 +33,8 @@ zstyle ':omz:update' mode reminder
 ## Plugins
 plugins=(
   fast-syntax-highlighting
+  fzf
+  fzf-tab
   history-substring-search 
   you-should-use
   z
