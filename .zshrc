@@ -69,7 +69,7 @@ setopt HIST_SAVE_NO_DUPS
 # Note: use LC_ALL='C' if you want sort to behave in expected way
 export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
-export LANGUAGE='en_US.UTF-8'xport LANGUAGE='en_US.UTF-8'
+export LANGUAGE='en_US.UTF-8'
 
 # env
 [[ -f ~/.env ]] && source ~/.env
