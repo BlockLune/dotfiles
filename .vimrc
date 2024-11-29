@@ -1,13 +1,10 @@
+" Base that based on tpope/vim-sensible
 let mapleader = " "
-set backspace=indent,eol,start
 set clipboard=unnamedplus
 set encoding=utf-8
 set hidden
 set ignorecase
-set incsearch
-set laststatus=2
 set mouse+=a
-set nocompatible
 set noerrorbells visualbell t_vb=
 set number
 set relativenumber
@@ -15,7 +12,6 @@ set shortmess+=I
 set smartcase
 set smartindent
 set ts=2 sw=2 et
-syntax on
 
 " Key bindings
 imap jk <Esc>
@@ -44,6 +40,7 @@ nmap H gT
 " Plugin options filetype plugin on
 " vim-plug
 call plug#begin()
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'Yggdroot/indentLine'
 Plug 'bkad/CamelCaseMotion'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -52,31 +49,37 @@ Plug 'easymotion/vim-easymotion'
 Plug 'github/copilot.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'mileszs/ack.vim'
+Plug 'mhinz/vim-startify'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'takac/vim-hardtime'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-pathogen'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer' }
 call plug#end()
 
+" vim-hardtime
+let g:hardtime_allow_different_key = 1
+let g:hardtime_default_on = 1
+let g:hardtime_maxcount = 2
+let g:hardtime_motion_with_count_resets = 1
+let g:hardtime_showmsg = 1
+
 " lightline.vim
 set noshowmode
 if !has('gui_running')
   set t_Co=256
 endif
-let g:lightline = { 'colorscheme': 'wombat' }
 
 " nerdtree
+let NERDTreeShowHidden = 1
 nnoremap <leader>e :NERDTreeToggle<CR>
-" Start NERDTree when Vim is started without file arguments.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
