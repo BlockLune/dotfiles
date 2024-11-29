@@ -1,6 +1,6 @@
 " Base that based on tpope/vim-sensible
 let mapleader = " "
-set clipboard=unnamedplus
+set clipboard=unnamed
 set encoding=utf-8
 set hidden
 set ignorecase
