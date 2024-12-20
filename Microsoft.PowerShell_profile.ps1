@@ -4,6 +4,8 @@
 # Helpful commands:
 # Get-Alias: show all aliases
 
+$env:LC_ALL = 'C.UTF-8'
+
 # util function
 function Test-CommandExists {
     param($command)
@@ -85,17 +87,12 @@ Set-Alias -Name "..." -Value Enter-Grand-Parent-Dir
 function ga { git add --verbose $args }
 function gaa { git add --all --verbose $args }
 function gb { git branch $args }
-function gc { git commit --verbose $args }
-function gcb { git checkout -b $args }
 function gcl { git clone $args }
 function gco { git checkout $args }
 function gcp { git cherry-pick $args }
 function gd { git diff $args }
 function gf { git fetch $args }
-function gl { git pull $args }
 function glog { git log --oneline --decorate --graph $args }
-function gm { git merge $args }
-function gp { git push $args }
 function gr { git remote $args }
 function grb { git rebase $args }
 function grf { git reflog $args }
@@ -107,8 +104,18 @@ function gsh { git show $args }
 function gss { git status --short $args }
 function gst { git status $args }
 function gsta { git stash push $args }
-function Edit-Last-Git-Commit { git commit --verbose --amend $args }
-Set-Alias -Name "gc!" -Value Edit-Last-Git-Commit -Force
+function Start-Git-Commit { git commit --verbose $args }
+Set-Alias -Name "gc" -Value Start-Git-Commit -Force
+function Start-Git-Commit-Amend { git commit --verbose --amend $args }
+Set-Alias -Name "gc!" -Value Start-Git-Commit-Amend -Force
+function Start-Git-Checkout { git checkout -b $args }
+Set-Alias -Name "gcb" -Value Start-Git-Checkout -Force
+function Start-Git-Pull { git pull $args }
+Set-Alias -Name "gl" -Value Start-Git-Pull -Force
+function Start-Git-Merge { git merge $args }
+Set-Alias -Name "gm" -Value Start-Git-Merge -Force
+function Start-Git-Push { git push $args }
+Set-Alias -Name "gp" -Value Start-Git-Push -Force
 
 # proxy
 function proxy {
