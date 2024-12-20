@@ -98,19 +98,19 @@ proxy() {
     if command -v wget &> /dev/null; then
       wget --spider --proxy=on http://google.com -q -T 10
       if [ $? -eq 0 ]; then
-        echo "Proxy is working."
+        echo "Proxy is working"
       else
-        echo "Proxy is not working."
+        echo "Proxy is not working"
       fi
     elif command -v curl &> /dev/null; then
       curl --proxy http://127.0.0.1:7890 http://google.com -s -m 10 --connect-timeout 10
       if [ $? -eq 0 ]; then
-        echo "Proxy is working."
+        echo "Proxy is working"
       else
-        echo "Proxy is not working."
+        echo "Proxy is not working"
       fi
     else
-      echo "Neither wget nor curl is installed, cannot check proxy."
+      echo "Neither wget nor curl is installed, cannot check proxy"
     fi
   else
     export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890

@@ -9,17 +9,17 @@ alias ..="cd .."
 alias md="mkdir -p"
 
 # Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
+if ls --color >/dev/null 2>&1; then # GNU `ls`
+  colorflag="--color"
 else # macOS `ls`
-	colorflag="-G"
+  colorflag="-G"
 fi
 
 # ls
-if command -v lsd &> /dev/null; then
+if command -v lsd &>/dev/null; then
   alias ls='lsd -F'
 else
-  alias ls="ls -F ${colorflag}" 
+  alias ls="ls -F ${colorflag}"
 fi
 alias ll="ls -lh"
 alias la="ls -A"
@@ -70,4 +70,4 @@ alias gst="git status"
 alias gsta="git stash push"
 
 # https://github.com/zdharma-continuum/fast-syntax-highlighting/issues/13
-alias code="/mnt/c/Users/AlittleFish/AppData/Local/Programs/Microsoft VS Code/bin/code"
+alias code="/mnt/c/Users/AlittleFish/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
