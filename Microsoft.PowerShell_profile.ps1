@@ -1,5 +1,8 @@
-# $PROFILE
+# BlockLune's PowerShell Profile ($PROFILE)
 # Use Get-Alias to show all aliases
+
+# emacs mode
+Set-PSReadLineOption -EditMode Emacs
 
 # ls
 function Get-ChildItem-With-Lsd { lsd -F $args }
@@ -122,12 +125,12 @@ function proxy {
     if ($Check) {
         try {
             $proxyUri = "http://127.0.0.1:7890"
-            
+
             $params = @{
-                Uri             = "http://google.com"
-                Method          = "Head"
-                Proxy           = $proxyUri
-                TimeoutSec      = 10
+                Uri = "http://google.com"
+                Method = "Head"
+                Proxy = $proxyUri
+                TimeoutSec = 10
                 UseBasicParsing = $true
             }
 
@@ -148,3 +151,4 @@ function proxy {
 
 # starship
 Invoke-Expression (&starship init powershell)
+
