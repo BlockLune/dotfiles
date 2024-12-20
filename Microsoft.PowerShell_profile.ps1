@@ -17,8 +17,7 @@ function Test-CommandExists {
 Set-PSReadLineOption -EditMode Emacs
 
 # editor
-$EDITOR = if (Test-CommandExists nvim) { 'nvim' }
-elseif (Test-CommandExists vim) { 'vim' }
+$EDITOR = if (Test-CommandExists vim) { 'vim' }
 elseif (Test-CommandExists vi) { 'vi' }
 elseif (Test-CommandExists code) { 'code' }
 else { 'notepad' }
