@@ -1,10 +1,67 @@
 # BlockLune's PowerShell Profile ($PROFILE)
-# Use Get-Alias to show all aliases
+# Reference: https://github.com/ChrisTitusTech/powershell-profile/blob/0640373cec48a32c9bb510730a34c6e121b077b3/Microsoft.PowerShell_profile.ps1
+
+# Helpful commands:
+# Get-Alias: show all aliases
+
+# util function
+function Test-CommandExists {
+    param($command)
+    $exists = $null -ne (Get-Command $command -ErrorAction SilentlyContinue)
+    return $exists
+}
 
 # emacs mode
 Set-PSReadLineOption -EditMode Emacs
 
-# ls
+# editor
+$EDITOR = if (Test-CommandExists nvim) { 'nvim' }
+elseif (Test-CommandExists vim) { 'vim' }
+elseif (Test-CommandExists vi) { 'vi' }
+elseif (Test-CommandExists code) { 'code' }
+else { 'notepad' }
+Set-Alias -Name vim -Value $EDITOR
+
+# touch
+function touch($file) { "" | Out-File $file -Encoding ASCII }
+
+# grep
+function grep($regex, $dir) {
+    if ( $dir ) {
+        Get-ChildItem $dir | select-string $regex
+        return
+    }
+    $input | select-string $regex
+}
+
+# pgrep
+function pgrep($name) {
+    Get-Process $name
+}
+
+# sed
+function sed($file, $find, $replace) {
+    (Get-Content $file).replace("$find", $replace) | Set-Content $file
+}
+
+# which
+function which($name) {
+    Get-Command $name | Select-Object -ExpandProperty Definition
+}
+
+# head
+function head {
+    param($Path, $n = 10)
+    Get-Content $Path -Head $n
+}
+
+# tail
+function tail {
+    param($Path, $n = 10, [switch]$f = $false)
+    Get-Content $Path -Tail $n -Wait:$f
+}
+
+# ls (lsd required)
 function Get-ChildItem-With-Lsd { lsd -F $args }
 Set-Alias -Name "ls" -Value Get-ChildItem-With-Lsd -Force
 
@@ -24,84 +81,34 @@ Set-Alias -Name ".." -Value Enter-Parent-Dir
 function Enter-Grand-Parent-Dir { Set-Location ../.. }
 Set-Alias -Name "..." -Value Enter-Grand-Parent-Dir
 
-# Git aliases
-function git-add { git add --verbose $args }
-Set-Alias -Name "ga" -Value git-add -Force
-
-function git-add-all { git add --all --verbose $args }
-Set-Alias -Name "gaa" -Value git-add-all -Force
-
-function git-branch { git branch $args }
-Set-Alias -Name "gb" -Value git-branch -Force
-
-function git-commit-amend { git commit --verbose --amend $args }
-Set-Alias -Name "gc!" -Value git-commit-amend -Force
-
-function git-commit { git commit --verbose $args }
-Set-Alias -Name "gc" -Value git-commit -Force
-
-function git-checkout-branch { git checkout -b $args }
-Set-Alias -Name "gcb" -Value git-checkout-branch -Force
-
-function git-clone { git clone --recurse-submodules $args }
-Set-Alias -Name "gcl" -Value git-clone -Force
-
-function git-checkout { git checkout $args }
-Set-Alias -Name "gco" -Value git-checkout -Force
-
-function git-cherry-pick { git cherry-pick $args }
-Set-Alias -Name "gcp" -Value git-cherry-pick -Force
-
-function git-diff { git diff $args }
-Set-Alias -Name "gd" -Value git-diff -Force
-
-function git-fetch { git fetch $args }
-Set-Alias -Name "gf" -Value git-fetch -Force
-
-function git-pull { git pull $args }
-Set-Alias -Name "gl" -Value git-pull -Force
-
-function git-log { git log --oneline --decorate --graph $args }
-Set-Alias -Name "glog" -Value git-log -Force
-
-function git-merge { git merge $args }
-Set-Alias -Name "gm" -Value git-merge -Force
-
-function git-push { git push $args }
-Set-Alias -Name "gp" -Value git-push -Force
-
-function git-remote { git remote $args }
-Set-Alias -Name "gr" -Value git-remote -Force
-
-function git-rebase { git rebase $args }
-Set-Alias -Name "grb" -Value git-rebase -Force
-
-function git-reflog { git reflog $args }
-Set-Alias -Name "grf" -Value git-reflog -Force
-
-function git-reset-hard { git reset --hard $args }
-Set-Alias -Name "grhh" -Value git-reset-hard -Force
-
-function git-rm { git rm $args }
-Set-Alias -Name "grm" -Value git-rm -Force
-
-function git-restore { git restore $args }
-Set-Alias -Name "grs" -Value git-restore -Force
-
-function git-restore-staged { git restore --staged $args }
-Set-Alias -Name "grst" -Value git-restore-staged -Force
-
-function git-show { git show $args }
-Set-Alias -Name "gsh" -Value git-show -Force
-
-function git-status-short { git status --short $args }
-Set-Alias -Name "gss" -Value git-status-short -Force
-
-function git-status { git status $args }
-Set-Alias -Name "gst" -Value git-status -Force
-
-function git-stash { git stash push $args }
-Set-Alias -Name "gsta" -Value git-stash -Force
+# git
+function ga { git add --verbose $args }
+function gaa { git add --all --verbose $args }
+function gb { git branch $args }
+function gc { git commit --verbose $args }
+function gcb { git checkout -b $args }
+function gcl { git clone $args }
+function gco { git checkout $args }
+function gcp { git cherry-pick $args }
+function gd { git diff $args }
+function gf { git fetch $args }
+function gl { git pull $args }
+function glog { git log --oneline --decorate --graph $args }
+function gm { git merge $args }
+function gp { git push $args }
+function gr { git remote $args }
+function grb { git rebase $args }
+function grf { git reflog $args }
+function grhh { git reset --hard $args }
+function grm { git rm $args }
+function grs { git restore --staged $args }
+function grst { git restore --staged $args }
+function gsh { git show $args }
+function gss { git status --short $args }
+function gst { git status $args }
+function gsta { git stash push $args }
+function Edit-Last-Git-Commit { git commit --verbose --amend $args }
+Set-Alias -Name "gc!" -Value Edit-Last-Git-Commit -Force
 
 # proxy
 function proxy {
@@ -127,10 +134,10 @@ function proxy {
             $proxyUri = "http://127.0.0.1:7890"
 
             $params = @{
-                Uri = "http://google.com"
-                Method = "Head"
-                Proxy = $proxyUri
-                TimeoutSec = 10
+                Uri             = "http://google.com"
+                Method          = "Head"
+                Proxy           = $proxyUri
+                TimeoutSec      = 10
                 UseBasicParsing = $true
             }
 
