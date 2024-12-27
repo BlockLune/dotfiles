@@ -83,6 +83,9 @@ Set-Alias -Name ".." -Value Enter-Parent-Dir
 function Enter-Grand-Parent-Dir { Set-Location ../.. }
 Set-Alias -Name "..." -Value Enter-Grand-Parent-Dir
 
+# open
+Set-Alias -Name "open" -Value Start-Process
+
 # git
 function ga { git add --verbose $args }
 function gaa { git add --all --verbose $args }
