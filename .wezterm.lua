@@ -8,7 +8,7 @@ config = {
     font_size = 14,
     tab_bar_at_bottom = true,
     use_fancy_tab_bar = false,
-    window_padding = { left = 16, right = 16, top = 16, bottom = 16 },
+    window_padding = { left = 16, right = 16, top = 0, bottom = 0 },
     window_background_opacity = 0.95,
 }
 return config
