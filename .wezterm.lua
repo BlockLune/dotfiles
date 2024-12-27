@@ -50,15 +50,19 @@ end
 -- macOS (Apple Silicon) --
 if wezterm.target_triple == 'aarch64-apple-darwin' then
   config.keys = {
+    { key = 'Enter', mods = 'SUPER', action = wezterm.action.ToggleFullScreen },
     -- search --
-    { key = 'f',  mods = 'SUPER', action = wezterm.action.Search({ CaseInSensitiveString = '' }) },
+    { key = 'f',     mods = 'SUPER', action = wezterm.action.Search({ CaseInSensitiveString = '' }) },
+    -- tab --
+    { key = '[',     mods = 'SUPER', action = wezterm.action.ActivateTabRelative(-1) },
+    { key = ']',     mods = 'SUPER', action = wezterm.action.ActivateTabRelative(1) },
     -- pane --
-    { key = '-',  mods = 'SUPER', action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' } },
-    { key = '\\', mods = 'SUPER', action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' } },
-    { key = 'h',  mods = 'SUPER', action = wezterm.action.ActivatePaneDirection 'Left' },
-    { key = 'j',  mods = 'SUPER', action = wezterm.action.ActivatePaneDirection 'Down' },
-    { key = 'k',  mods = 'SUPER', action = wezterm.action.ActivatePaneDirection 'Up' },
-    { key = 'l',  mods = 'SUPER', action = wezterm.action.ActivatePaneDirection 'Right' },
+    { key = '-',     mods = 'SUPER', action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' } },
+    { key = '\\',    mods = 'SUPER', action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' } },
+    { key = 'h',     mods = 'SUPER', action = wezterm.action.ActivatePaneDirection 'Left' },
+    { key = 'j',     mods = 'SUPER', action = wezterm.action.ActivatePaneDirection 'Down' },
+    { key = 'k',     mods = 'SUPER', action = wezterm.action.ActivatePaneDirection 'Up' },
+    { key = 'l',     mods = 'SUPER', action = wezterm.action.ActivatePaneDirection 'Right' },
   }
   config.macos_window_background_blur = 20
   config.window_background_opacity = 0.75
