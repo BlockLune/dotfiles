@@ -5,6 +5,7 @@
 # Get-Alias: show all aliases
 
 $env:LC_ALL = 'C.UTF-8'
+$OutputEncoding = [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 
 # util function
 function Test-CommandExists {
@@ -165,3 +166,5 @@ function proxy {
 # starship
 Invoke-Expression (&starship init powershell)
 
+# zoxide
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
