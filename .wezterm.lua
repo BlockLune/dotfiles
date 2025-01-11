@@ -3,10 +3,29 @@ local config = wezterm.config_builder()
 
 -- general --
 config.automatically_reload_config = true
-config.color_scheme = 'Dracula (Official)'
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
+config.window_close_confirmation = 'NeverPrompt'
 config.window_padding = { left = 16, right = 16, top = 16, bottom = 16 }
+
+-- color scheme --
+function scheme_for_appearance(appearance)
+  if appearance:find 'Dark' then
+    return 'Dracula (Official)'
+  else
+    return 'Catppuccin Latte'
+  end
+end
+
+wezterm.on('window-config-reloaded', function(window, pane)
+  local overrides = window:get_config_overrides() or {}
+  local appearance = window:get_appearance()
+  local scheme = scheme_for_appearance(appearance)
+  if overrides.color_scheme ~= scheme then
+    overrides.color_scheme = scheme
+    window:set_config_overrides(overrides)
+  end
+end)
 
 -- font --
 config.font = wezterm.font_with_fallback { 'FiraCode Nerd Font Mono', 'Fira Code', 'PingFang SC', 'Microsoft YaHei' }
