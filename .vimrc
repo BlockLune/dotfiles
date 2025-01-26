@@ -1,6 +1,5 @@
-" Base that based on tpope/vim-sensible
+" Basic configuration, based on tpope/vim-sensible
 let mapleader = " "
-set background=dark
 set clipboard=unnamed
 set encoding=utf-8
 set hidden
@@ -50,6 +49,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'github/copilot.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'liuchengxu/vim-which-key'
+Plug 'mg979/vim-visual-multi'
 Plug 'mhinz/vim-startify'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'preservim/nerdtree'
@@ -62,15 +63,11 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer' }
+" Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer' }
 call plug#end()
 
-" vim-hardtime
-let g:hardtime_allow_different_key = 1
-let g:hardtime_default_on = 1
-let g:hardtime_maxcount = 2
-let g:hardtime_motion_with_count_resets = 1
-let g:hardtime_showmsg = 1
+" ctrlp
+let g:ctrlp_show_hidden = 1
 
 " lightline.vim
 set noshowmode
@@ -84,9 +81,15 @@ nnoremap <leader>e :NERDTreeToggle<CR>
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
+" vim-hardtime
+let g:hardtime_allow_different_key = 1
+let g:hardtime_default_on = 1
+let g:hardtime_maxcount = 3
+let g:hardtime_motion_with_count_resets = 1
+let g:hardtime_showmsg = 1
+
 " ycm
-" Let clangd fully control code completion
-let g:ycm_clangd_uses_ycmd_caching = 0
-" Use installed clangd, not YCM-bundled clangd which doesn't get updates
-let g:ycm_clangd_binary_path = exepath("clangd")
+" let g:ycm_clangd_uses_ycmd_caching = 0 " Let clangd fully control code completion
+" let g:ycm_clangd_binary_path = exepath("clangd") " Use installed clangd, not YCM-bundled clangd which doesn't get updates
+
 
