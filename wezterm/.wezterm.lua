@@ -33,7 +33,7 @@ wezterm.on('window-config-reloaded', function(window, pane)
 end)
 
 -- font --
-config.font = wezterm.font_with_fallback { 'FiraCode Nerd Font Mono', 'Fira Code', 'PingFang SC', 'Microsoft YaHei' }
+config.font = wezterm.font_with_fallback { 'FiraCode Nerd Font Mono', 'Fira Code', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', 'Noto Sans SC', 'Noto Sans' }
 config.font_size = 14
 
 -- Windows, Linux --
