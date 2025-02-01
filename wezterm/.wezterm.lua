@@ -31,9 +31,8 @@ end)
 config.font = wezterm.font_with_fallback { 'FiraCode Nerd Font Mono', 'Fira Code', 'PingFang SC', 'Microsoft YaHei' }
 config.font_size = 14
 
--- Windows --
-if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-  config.default_prog = { 'C:\\Program Files\\PowerShell\\7\\pwsh.exe' }
+-- Windows, Linux --
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' or wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
   config.keys = {
     -- copy & paste
     { key = 'c',  mods = 'ALT', action = wezterm.action.CopyTo('Clipboard') },
@@ -62,11 +61,16 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
     { key = 'k',  mods = 'ALT', action = wezterm.action.ActivatePaneDirection 'Up' },
     { key = 'l',  mods = 'ALT', action = wezterm.action.ActivatePaneDirection 'Right' },
   }
+end
+
+-- Windows Only --
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+  config.default_prog = { 'C:\\Program Files\\PowerShell\\7\\pwsh.exe' }
   config.win32_system_backdrop = 'Mica'
   config.window_background_opacity = 0
 end
 
--- macOS (Apple Silicon) --
+-- macOS (Apple Silicon) Only --
 if wezterm.target_triple == 'aarch64-apple-darwin' then
   config.keys = {
     { key = 'Enter', mods = 'SUPER', action = wezterm.action.ToggleFullScreen },
@@ -85,6 +89,11 @@ if wezterm.target_triple == 'aarch64-apple-darwin' then
   }
   config.macos_window_background_blur = 20
   config.window_background_opacity = 0.75
+end
+
+-- Linux Only --
+if wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
+  config.window_background_opacity = 0.97
 end
 
 return config
