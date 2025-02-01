@@ -67,3 +67,8 @@ fi
 if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
+
+# utils
+if [ -f ~/.utils ]; then
+    source ~/.utils
+fi

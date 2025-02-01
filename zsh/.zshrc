@@ -6,12 +6,6 @@
 # - [zsh-autosugestions](https://github.com/zsh-users/zsh-autosuggestions)
 # - [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
 # - [zsh-osx-autoproxy](https://github.com/sukkaw/zsh-osx-autoproxy) (optional)
-# Note: You may need to do some modifications to the configuration file to make it work on your system.
-# References:
-# - https://lift.cs.princeton.edu/java/.bashrc
-# - https://github.com/JJGO/dotfiles/blob/master/zsh/.zprezto/runcoms/zshrc
-# - https://blog.skk.moe/post/make-oh-my-zsh-fly/
-
 
 # powerlevel10k configuration
 ## Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -71,50 +65,12 @@ export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
 export LANGUAGE='en_US.UTF-8'
 
-# env
-[[ -f ~/.env ]] && source ~/.env
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+# env
+[[ -f ~/.env ]] && source ~/.env
+# utils
+[[ -f ~/.utils ]] && source ~/.utils
 
-# lazyload
-nvm() {
-    if [ -d "$HOME/.nvm" ]; then
-        export NVM_DIR="$HOME/.nvm"
-        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-        nvm "$@"
-    else
-        echo "nvm is not installed" >&2
-        return 1
-    fi
-}
-
-# proxy settings
-proxy() {
-  if [[ "$1" == "-d" || "$1" == "--disable" || "$1" == "-c" || "$1" == "--clear" ]]; then
-    unset https_proxy http_proxy all_proxy
-    echo "Proxy disabled"
-  elif [[ "$1" == "--check" ]]; then
-    if command -v wget &> /dev/null; then
-      wget --spider --proxy=on http://google.com -q -T 10
-      if [ $? -eq 0 ]; then
-        echo "Proxy is working"
-      else
-        echo "Proxy is not working"
-      fi
-    elif command -v curl &> /dev/null; then
-      curl --proxy http://127.0.0.1:7890 http://google.com -s -m 10 --connect-timeout 10
-      if [ $? -eq 0 ]; then
-        echo "Proxy is working"
-      else
-        echo "Proxy is not working"
-      fi
-    else
-      echo "Neither wget nor curl is installed, cannot check proxy"
-    fi
-  else
-    export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
-    echo "Proxy enabled"
-  fi
-}
-
+# mise
+eval "$(mise activate zsh)"
