@@ -10,6 +10,11 @@ config.window_padding = { left = 16, right = 16, top = 16, bottom = 16 }
 
 -- color scheme --
 function scheme_for_appearance(appearance)
+  -- autodetect is currently not working on my linux
+  if wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
+    return 'Dracula (Official)'
+  end
+
   if appearance:find 'Dark' then
     return 'Dracula (Official)'
   else
