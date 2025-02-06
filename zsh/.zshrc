@@ -1,16 +1,16 @@
-# My zsh configuration file
-# Make sure to install the following packages before using this configuration:
+# BlockLune's Zsh Configuration
+#
 # - [oh-my-zsh](https://ohmyz.sh/)
 # - [powerlevel10k](https://github.com/romkatv/powerlevel10k)
 # - [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting)
+# - [fzf-tab](https://github.com/Aloxaf/fzf-tab)
 # - [zsh-autosugestions](https://github.com/zsh-users/zsh-autosuggestions)
 # - [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
 # - [zsh-osx-autoproxy](https://github.com/sukkaw/zsh-osx-autoproxy) (optional)
+# - [zsh-you-should-use](https://github.com/MichaelAquilina/zsh-you-should-use)
 
 # powerlevel10k configuration
-## Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-## Initialization code that may require console input (password prompts, [y/n]
-## confirmations, etc.) must go above this block; everything else may go below.
+## (Should stay close to the top of ~/.zshrc.)
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -38,7 +38,7 @@ plugins=(
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white'
 source $ZSH/oh-my-zsh.sh
 
-# Set Windows codepage to 65001 (UTF-8) (optional)
+# Set Windows codepage to 65001 (UTF-8)
 if [[ "$OSTYPE" == "msys" ]]; then
     chcp.com 65001 &> /dev/null
 fi
@@ -74,3 +74,6 @@ export LANGUAGE='en_US.UTF-8'
 
 # mise
 eval "$(mise activate zsh)"
+
+# zoxide
+eval "$(zoxide init zsh --cmd cd)"
