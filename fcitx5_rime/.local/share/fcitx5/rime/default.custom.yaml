@@ -1,0 +1,16 @@
+# default.custom.yaml
+patch:
+  schema_list:
+    - schema: double_pinyin_flypy # 小鹤双拼
+  menu:
+    page_size: 4 # 候选词个数
+  key_binder:
+    # 以词定字（上屏当前词句的第一个或最后一个字）
+    # 使用 - = 进行以词定字
+    select_first_character: "minus"
+    select_last_character: "equal"
+
+    bindings:
+      # 翻页 [ ]
+      - { when: paging, accept: bracketleft, send: Page_Up }
+      - { when: has_menu, accept: bracketright, send: Page_Down }
