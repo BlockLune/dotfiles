@@ -69,5 +69,7 @@ alias gss="git status --short"
 alias gst="git status"
 alias gsta="git stash push"
 
-# https://github.com/zdharma-continuum/fast-syntax-highlighting/issues/13
-alias code="/mnt/c/Users/AlittleFish/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
+alias nv="neovide"
+alias rg="rg --smart-case --context 3"
+alias sg4="sgpt --model gpt-4o"
+alias sg="sgpt"
