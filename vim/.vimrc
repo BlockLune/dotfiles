@@ -6,6 +6,7 @@ set hidden
 set ignorecase
 set mouse+=a
 set noerrorbells visualbell t_vb=
+set nowrap
 set number
 set relativenumber
 set shortmess+=I
