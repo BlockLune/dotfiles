@@ -17,10 +17,10 @@ set ts=2 sw=2 et
 imap jk <Esc>
 nmap Q <Nop>
 
-nmap j gj
-nmap k gk
-vmap j gj
-vmap k gk
+"nmap j gj
+"nmap k gk
+"vmap j gj
+"vmap k gk
 
 nnoremap <leader>\| :vsp<CR>
 nnoremap <leader>- :sp<CR>
