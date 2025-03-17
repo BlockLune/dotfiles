@@ -1,12 +1,17 @@
 # BlockLune's Zsh Configuration
 #
+# Framework:
 # - [oh-my-zsh](https://ohmyz.sh/)
+#
+# Theme:
 # - [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+#
+# Plugins:
 # - [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting)
 # - [fzf-tab](https://github.com/Aloxaf/fzf-tab)
+# - [proxy-utils](https://github.com/BlockLune/proxy-utils)
 # - [zsh-autosugestions](https://github.com/zsh-users/zsh-autosuggestions)
 # - [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
-# - [zsh-osx-autoproxy](https://github.com/sukkaw/zsh-osx-autoproxy) (optional)
 # - [zsh-you-should-use](https://github.com/MichaelAquilina/zsh-you-should-use)
 
 # powerlevel10k configuration
@@ -30,10 +35,9 @@ plugins=(
   fzf
   fzf-tab
   history-substring-search 
+  proxy-utils
   you-should-use
-  z
   zsh-autosuggestions 
-  # zsh-osx-autoproxy # optional
 )
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white'
 source $ZSH/oh-my-zsh.sh
