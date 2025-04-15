@@ -1,1 +1,1 @@
-cmd + shift - t : open -a wezterm
+cmd + ctrl - t : open -a wezterm
