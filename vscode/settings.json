@@ -52,9 +52,6 @@
   "vim.insertModeKeyBindings": [{ "before": ["j", "k"], "after": ["<esc>"] }],
   "vim.leader": "<space>",
   "vim.normalModeKeyBindings": [
-    // navigate
-    { "before": ["j"], "after": ["g", "j"] },
-    { "before": ["k"], "after": ["g", "k"] },
     // file and directory
     { "before": ["<leader>", "e"], "commands": ["workbench.view.explorer"] },
     { "before": ["<leader>", "<leader>"], "commands": ["workbench.action.quickOpen"] },
@@ -80,10 +77,6 @@
   "vim.smartcase": true,
   "vim.useCtrlKeys": true,
   "vim.useSystemClipboard": true,
-  "vim.visualModeKeyBindings": [
-    { "before": ["j"], "after": ["g", "j"] },
-    { "before": ["k"], "after": ["g", "k"] }
-  ],
   "vim.visualModeKeyBindingsNonRecursive": [
     // paste without overriding the current register
     { "before": ["p"], "after": ["p", "g", "v", "y"] }

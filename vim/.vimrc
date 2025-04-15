@@ -23,6 +23,8 @@ nmap Q <Nop>
 "vmap j gj
 "vmap k gk
 
+vnoremap p pgvy
+
 nnoremap <leader>\| :vsp<CR>
 nnoremap <leader>- :sp<CR>
 nnoremap <leader>qq :qa<CR>
