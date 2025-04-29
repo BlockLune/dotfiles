@@ -1,1 +1,2 @@
 cmd + ctrl - t : open -a wezterm
+cmd + ctrl - return : open -a Arc
