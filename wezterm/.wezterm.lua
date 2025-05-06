@@ -75,8 +75,8 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
   config.window_background_opacity = 0
 end
 
--- macOS (Apple Silicon) Only --
-if wezterm.target_triple == 'aarch64-apple-darwin' then
+-- macOS Only --
+if wezterm.target_triple == 'x86_64-apple-darwin' or wezterm.target_triple == 'aarch64-apple-darwin' then
   config.keys = {
     { key = 'Enter', mods = 'SUPER', action = wezterm.action.ToggleFullScreen },
     -- search --
