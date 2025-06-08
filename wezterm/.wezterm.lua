@@ -1,17 +1,22 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
--- general --
+-- Platform detection
+local is_windows = wezterm.target_triple == "x86_64-pc-windows-msvc"
+local is_linux = wezterm.target_triple == "x86_64-unknown-linux-gnu"
+local is_macos = wezterm.target_triple == "x86_64-apple-darwin" or wezterm.target_triple == "aarch64-apple-darwin"
+
+-- General configuration
 config.automatically_reload_config = true
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 config.window_close_confirmation = "NeverPrompt"
 config.window_padding = { left = 16, right = 16, top = 16, bottom = 16 }
 
--- color scheme --
+-- Color scheme configuration
 local function scheme_for_appearance(appearance)
-    -- autodetect is currently not working on my linux
-    if wezterm.target_triple == "x86_64-unknown-linux-gnu" then
+    -- autodetect is currently not working on linux
+    if is_linux then
         return "Dracula (Official)"
     end
 
@@ -22,7 +27,7 @@ local function scheme_for_appearance(appearance)
     end
 end
 
-wezterm.on("window-config-reloaded", function(window, pane)
+wezterm.on("window-config-reloaded", function(window, _)
     local overrides = window:get_config_overrides() or {}
     local appearance = window:get_appearance()
     local scheme = scheme_for_appearance(appearance)
@@ -32,7 +37,7 @@ wezterm.on("window-config-reloaded", function(window, pane)
     end
 end)
 
--- font --
+-- Font configuration
 config.font = wezterm.font_with_fallback({
     "FiraCode Nerd Font Mono",
     "Fira Code",
@@ -44,72 +49,73 @@ config.font = wezterm.font_with_fallback({
 })
 config.font_size = 14
 
--- Windows, Linux --
-if wezterm.target_triple == "x86_64-pc-windows-msvc" or wezterm.target_triple == "x86_64-unknown-linux-gnu" then
-    config.keys = {
+-- Key mappings
+local function create_key_bindings()
+    -- Determine modifier key based on platform (cmd on macOS, alt on others)
+    local mod_key = is_macos and "SUPER" or "ALT"
+
+    local keys = {
         -- copy & paste
-        { key = "c", mods = "ALT", action = wezterm.action.CopyTo("Clipboard") },
-        { key = "v", mods = "ALT", action = wezterm.action.PasteFrom("Clipboard") },
-        -- search --
-        { key = "f", mods = "ALT", action = wezterm.action.Search({ CaseInSensitiveString = "" }) },
-        -- tab --
-        { key = "t", mods = "ALT", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
-        { key = "[", mods = "ALT", action = wezterm.action.ActivateTabRelative(-1) },
-        { key = "]", mods = "ALT", action = wezterm.action.ActivateTabRelative(1) },
-        { key = "1", mods = "ALT", action = wezterm.action.ActivateTab(0) },
-        { key = "2", mods = "ALT", action = wezterm.action.ActivateTab(1) },
-        { key = "3", mods = "ALT", action = wezterm.action.ActivateTab(2) },
-        { key = "4", mods = "ALT", action = wezterm.action.ActivateTab(3) },
-        { key = "5", mods = "ALT", action = wezterm.action.ActivateTab(4) },
-        { key = "6", mods = "ALT", action = wezterm.action.ActivateTab(5) },
-        { key = "7", mods = "ALT", action = wezterm.action.ActivateTab(6) },
-        { key = "8", mods = "ALT", action = wezterm.action.ActivateTab(7) },
-        { key = "9", mods = "ALT", action = wezterm.action.ActivateTab(-1) },
-        -- pane --
-        { key = "w", mods = "ALT", action = wezterm.action.CloseCurrentPane({ confirm = true }) },
-        { key = "-", mods = "ALT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
-        { key = "d", mods = "ALT|SHIFT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
-        { key = "\\", mods = "ALT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-        { key = "d", mods = "ALT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-        { key = "h", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Left") },
-        { key = "j", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Down") },
-        { key = "k", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Up") },
-        { key = "l", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Right") },
+        { key = "c", mods = mod_key, action = wezterm.action.CopyTo("Clipboard") },
+        { key = "v", mods = mod_key, action = wezterm.action.PasteFrom("Clipboard") },
+
+        -- search
+        { key = "f", mods = mod_key, action = wezterm.action.Search({ CaseInSensitiveString = "" }) },
+
+        -- tab management
+        { key = "t", mods = mod_key, action = wezterm.action.SpawnTab("CurrentPaneDomain") },
+        { key = "[", mods = mod_key, action = wezterm.action.ActivateTabRelative(-1) },
+        { key = "]", mods = mod_key, action = wezterm.action.ActivateTabRelative(1) },
+
+        -- tab direct access
+        { key = "1", mods = mod_key, action = wezterm.action.ActivateTab(0) },
+        { key = "2", mods = mod_key, action = wezterm.action.ActivateTab(1) },
+        { key = "3", mods = mod_key, action = wezterm.action.ActivateTab(2) },
+        { key = "4", mods = mod_key, action = wezterm.action.ActivateTab(3) },
+        { key = "5", mods = mod_key, action = wezterm.action.ActivateTab(4) },
+        { key = "6", mods = mod_key, action = wezterm.action.ActivateTab(5) },
+        { key = "7", mods = mod_key, action = wezterm.action.ActivateTab(6) },
+        { key = "8", mods = mod_key, action = wezterm.action.ActivateTab(7) },
+        { key = "9", mods = mod_key, action = wezterm.action.ActivateTab(-1) },
+
+        -- pane management
+        { key = "w", mods = mod_key, action = wezterm.action.CloseCurrentPane({ confirm = true }) },
+        { key = "-", mods = mod_key, action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+        {
+            key = "d",
+            mods = mod_key .. "|SHIFT",
+            action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+        },
+        { key = "\\", mods = mod_key, action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+        { key = "d", mods = mod_key, action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+
+        -- pane navigation (vim-like)
+        { key = "h", mods = mod_key, action = wezterm.action.ActivatePaneDirection("Left") },
+        { key = "j", mods = mod_key, action = wezterm.action.ActivatePaneDirection("Down") },
+        { key = "k", mods = mod_key, action = wezterm.action.ActivatePaneDirection("Up") },
+        { key = "l", mods = mod_key, action = wezterm.action.ActivatePaneDirection("Right") },
     }
+
+    -- macOS specific keys
+    if is_macos then
+        table.insert(keys, { key = "Enter", mods = "SUPER", action = wezterm.action.ToggleFullScreen })
+    end
+
+    return keys
 end
 
--- Windows Only --
-if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+-- Apply key bindings
+config.keys = create_key_bindings()
+
+-- Platform-specific configurations
+if is_windows then
     config.default_prog = { "C:\\Program Files\\PowerShell\\7\\pwsh.exe" }
     config.win32_system_backdrop = "Mica"
     config.window_background_opacity = 0
-end
-
--- macOS Only --
-if wezterm.target_triple == "x86_64-apple-darwin" or wezterm.target_triple == "aarch64-apple-darwin" then
-    config.keys = {
-        { key = "Enter", mods = "SUPER", action = wezterm.action.ToggleFullScreen },
-        -- search --
-        { key = "f", mods = "SUPER", action = wezterm.action.Search({ CaseInSensitiveString = "" }) },
-        -- tab --
-        { key = "[", mods = "SUPER", action = wezterm.action.ActivateTabRelative(-1) },
-        { key = "]", mods = "SUPER", action = wezterm.action.ActivateTabRelative(1) },
-        -- pane --
-        { key = "-", mods = "SUPER", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
-        { key = "d", mods = "SUPER|SHIFT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
-        { key = "\\", mods = "SUPER", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-        { key = "d", mods = "SUPER", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-        { key = "h", mods = "SUPER", action = wezterm.action.ActivatePaneDirection("Left") },
-        { key = "j", mods = "SUPER", action = wezterm.action.ActivatePaneDirection("Down") },
-        { key = "k", mods = "SUPER", action = wezterm.action.ActivatePaneDirection("Up") },
-        { key = "l", mods = "SUPER", action = wezterm.action.ActivatePaneDirection("Right") },
-    }
+elseif is_macos then
     config.macos_window_background_blur = 20
     config.window_background_opacity = 0.75
-end
-
--- Linux Only --
-if wezterm.target_triple == "x86_64-unknown-linux-gnu" then
+elseif is_linux then
     config.window_background_opacity = 0.97
 end
 
