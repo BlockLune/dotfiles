@@ -1,0 +1,52 @@
+{
+  "recommendations": [
+    // tools
+    "aaron-bond.better-comments",
+    "antfu.iconify",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "foxundermoon.shell-format",
+    "github.copilot",
+    "github.copilot-chat",
+    "gruntfuggly.todo-tree",
+    "humao.rest-client",
+    "lokalise.i18n-ally",
+    "mhutchie.git-graph",
+    "saoudrizwan.claude-dev",
+    "usernamehw.errorlens",
+    "vincaslt.highlight-matching-tag",
+    "vscodevim.vim",
+
+    // language and file support
+    "astro-build.astro-vscode",
+    "bradlc.vscode-tailwindcss",
+    "csstools.postcss",
+    "davidanson.vscode-markdownlint",
+    "golang.go",
+    "llvm-vs-code-extensions.vscode-clangd",
+    "maziac.asm-code-lens",
+    "mgmcdermott.vscode-language-babel",
+    "mikestead.dotenv",
+    "ms-vscode.hexeditor",
+    "myriad-dreamin.tinymist",
+    "redhat.vscode-xml",
+    "rust-lang.rust-analyzer",
+    "simonsiefke.svg-preview",
+    "sysoev.language-stylus",
+    "timonwong.shellcheck",
+    "tomoki1207.pdf",
+    "unifiedjs.vscode-mdx",
+    "vadimcn.vscode-lldb",
+    "yzhang.markdown-all-in-one",
+
+    // themes
+    "catppuccin.catppuccin-vsc",
+    "dracula-theme.theme-dracula",
+    "enkia.tokyo-night",
+    "github.github-vscode-theme",
+
+    // icon themes
+    "catppuccin.catppuccin-vsc-icons",
+    "pkief.material-icon-theme"
+  ]
+}
