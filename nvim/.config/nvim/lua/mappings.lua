@@ -8,8 +8,8 @@ map("i", "jk", "<ESC>", { desc = "use `jk` to reset to normal mode" })
 map("n", "<leader>qq", ":qa<CR>", { desc = "quick quit" })
 
 -- split
-map("n", "<leader>|", ":vsp<CR>", { desc = "vertical split" })
-map("n", "<leader>-", ":sp<CR>", { desc = "horizontal split" })
+map("n", "<leader>|", ":vsp<CR>", { desc = "split (vertical)" })
+map("n", "<leader>-", ":sp<CR>", { desc = "split (horizontal)" })
 
 -- tabufline
 local tabufline = require "nvchad.tabufline"
