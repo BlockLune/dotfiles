@@ -1,39 +1,10 @@
-" Basic configuration, based on tpope/vim-sensible
-let mapleader = " "
-set clipboard=unnamed
-set encoding=utf-8
-set hidden
-set ignorecase
-set mouse+=a
-set noerrorbells visualbell t_vb=
-set nowrap
-set number
-set relativenumber
-set shortmess+=I
-set smartcase
-set smartindent
-set ts=2 sw=2 et
+"""""""""""""""""""""
+" Basic .vimrc      "
+" Author: BlockLune "
+"""""""""""""""""""""
 
-" Key bindings
-imap jk <Esc>
-nmap Q <Nop>
-vnoremap p pgvy
-
-nnoremap <leader>\| :vsp<CR>
-nnoremap <leader>- :sp<CR>
-nnoremap <leader>qq :qa<CR>
-
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-
-nmap <leader>bd :bdel<CR>
-nmap <leader>bo :only<CR>
-nmap L :bprev<CR>
-nmap H :bnext<CR>
-
-" Plugin options filetype plugin on
+" Plugin options
+filetype plugin on
 " vim-plug
 call plug#begin()
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
@@ -62,6 +33,51 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 " Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer' }
 call plug#end()
+
+
+
+" Run `:help option-list` to learn more
+set clipboard=unnamed
+set encoding=utf-8
+set expandtab
+set hidden
+set ignorecase
+set mouse+=a
+set nobackup
+set noerrorbells visualbell t_vb=
+set noswapfile
+set nowrap
+set nowritebackup
+set number
+set relativenumber
+set scrolloff=10
+set shiftwidth=2
+set shortmess+=I
+set smartcase
+set smartindent
+set smarttab
+set tabstop=2
+
+" Key bindings
+let mapleader = " "
+
+imap jk <Esc>
+nmap Q <Nop>
+vnoremap p pgvy
+
+nnoremap <leader>\| :vsp<CR>
+nnoremap <leader>- :sp<CR>
+nnoremap <leader>qq :qa<CR>
+
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+nmap <leader>bd :bdel<CR>
+nmap <leader>bo :only<CR>
+nmap L :bprev<CR>
+nmap H :bnext<CR>
 
 " ctrlp
 let g:ctrlp_map = '<leader><leader>'
