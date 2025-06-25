@@ -34,8 +34,6 @@ Plug 'tpope/vim-unimpaired'
 " Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer' }
 call plug#end()
 
-
-
 " Run `:help option-list` to learn more
 set clipboard=unnamed
 set encoding=utf-8
@@ -74,8 +72,37 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-nmap <leader>bd :bdel<CR>
-nmap <leader>bo :only<CR>
+" The function BufDel is from Bclose of
+" https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
+"
+" Don't close window, when deleting a buffer
+function! BufDel()
+  let l:currentBufNum = bufnr('%')
+  let l:alternateBufNum = bufnr('#')
+
+  if buflisted(l:alternateBufNum)
+    buffer #
+  else
+    bnext
+  endif
+
+  if bufnr('%') == l:currentBufNum
+    new
+  endif
+
+  if buflisted(l:currentBufNum)
+    execute('bdelete! '.l:currentBufNum)
+  endif
+endfunction
+
+function! BufOnly()
+  let l:currentBufNum = bufnr('%')
+  bufdo if &modified == 0 && bufnr('%') != l:currentBufNum | call BufDel() | endif
+endfunction
+
+nmap <leader>bd :call BufDel()<CR>
+nmap <leader>bo :call BufOnly()<CR>
+nmap <leader>bl :ls<CR>
 nmap L :bprev<CR>
 nmap H :bnext<CR>
 
