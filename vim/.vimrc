@@ -17,12 +17,6 @@ set ts=2 sw=2 et
 " Key bindings
 imap jk <Esc>
 nmap Q <Nop>
-
-"nmap j gj
-"nmap k gk
-"vmap j gj
-"vmap k gk
-
 vnoremap p pgvy
 
 nnoremap <leader>\| :vsp<CR>
@@ -34,22 +28,22 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-nmap <leader>bd :bd<CR>
+nmap <leader>bd :bdel<CR>
 nmap <leader>bo :only<CR>
-
-nmap L gt
-nmap H gT
+nmap L :bprev<CR>
+nmap H :bnext<CR>
 
 " Plugin options filetype plugin on
 " vim-plug
 call plug#begin()
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'Yggdroot/indentLine'
-Plug 'bkad/CamelCaseMotion'
+Plug 'ap/vim-buftabline'
+" Plug 'bkad/CamelCaseMotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dense-analysis/ale'
-Plug 'easymotion/vim-easymotion'
-Plug 'github/copilot.vim'
+" Plug 'easymotion/vim-easymotion'
+" Plug 'github/copilot.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'liuchengxu/vim-which-key'
@@ -70,6 +64,7 @@ Plug 'tpope/vim-unimpaired'
 call plug#end()
 
 " ctrlp
+let g:ctrlp_map = '<leader><leader>'
 let g:ctrlp_show_hidden = 1
 
 " lightline.vim
@@ -95,4 +90,6 @@ let g:hardtime_showmsg = 1
 " let g:ycm_clangd_uses_ycmd_caching = 0 " Let clangd fully control code completion
 " let g:ycm_clangd_binary_path = exepath("clangd") " Use installed clangd, not YCM-bundled clangd which doesn't get updates
 
+" vim-which-key
+nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
 
