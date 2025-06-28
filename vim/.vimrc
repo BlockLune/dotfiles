@@ -31,6 +31,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'wakatime/vim-wakatime'
 " Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer' }
 call plug#end()
 
