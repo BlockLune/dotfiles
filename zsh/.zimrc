@@ -1,0 +1,51 @@
+#
+# Modules
+#
+
+# Sets sane Zsh built-in environment options.
+zmodule environment
+# Applies correct bindkeys for input events.
+zmodule input
+# Sets a custom terminal title.
+zmodule termtitle
+# Utility aliases and functions. Adds colour to ls, grep and less.
+zmodule utility
+
+
+#
+# Prompt
+#
+
+# See https://github.com/sindresorhus/pure
+zmodule sindresorhus/pure --source async.zsh --source pure.zsh
+
+
+#
+# Completion
+#
+
+# Additional completion definitions for Zsh.
+zmodule zsh-users/zsh-completions --fpath src
+# Enables and configures smart and extensive tab completion.
+# completion must be sourced after all modules that add completion definitions.
+zmodule completion
+
+
+#
+# Fish-like features
+#
+
+# Fish-like syntax highlighting for Zsh.
+zmodule zdharma-continuum/fast-syntax-highlighting
+# Fish-like history search (up arrow) for Zsh.
+zmodule zsh-users/zsh-history-substring-search
+# Fish-like autosuggestions for Zsh.
+zmodule zsh-users/zsh-autosuggestions
+
+
+#
+# Other
+#
+zmodule Aloxaf/fzf-tab
+zmodule BlockLune/proxy-utils
+zmodule MichaelAquilina/zsh-you-should-use
