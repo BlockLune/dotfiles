@@ -87,4 +87,3 @@ if (( ${+commands[zoxide]} )) && [[ -z "${ZOXIDE_ACTIVATED:-}" ]]; then
   export ZOXIDE_ACTIVATED=1
 fi
 
-
