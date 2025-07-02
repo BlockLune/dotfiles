@@ -1,7 +1,6 @@
-"""""""""""""""""""""
-" Basic .vimrc      "
-" Author: BlockLune "
-"""""""""""""""""""""
+" -----------------------------
+" BlockLune's Vim Configuration
+" -----------------------------
 
 " Plugin options
 filetype plugin on
