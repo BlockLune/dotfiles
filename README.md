@@ -29,7 +29,7 @@ Ensure you have the following installed:
 2. Set up the `.zshrc` file:
 
    ```shell
-   echo 'source ~/.zshrc_base' > ~/.zshrc
+   echo 'source "$HOME/.zshrc_base"' > ~/.zshrc
    ```
 
 3. (Optional) Change your default shell to Zsh:
