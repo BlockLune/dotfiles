@@ -1,18 +1,72 @@
+# ----------------------
+# BlockLune's .gitconfig
+# ----------------------
+
+# Reference: https://www.youtube.com/watch?v=G3NJzFX6XhY
+
 [user]
-name = BlockLune
-email = 39331194+BlockLune@users.noreply.github.com
-[init]
-defaultBranch = main
-[diff]
-tool = vimdiff
+  name = BlockLune
+  email = 39331194+BlockLune@users.noreply.github.com
 [core]
-quotepath = false
-editor = vim
-excludesfile = ~/.gitignore
+  pager = delta       # Use delta as the default pager for colored output
+  quotepath = false   # Disable quoting of pathnames with special characters
+  compression = 9     # Set maximum compression level (0-9)
+  preloadindex = true # Enable index preloading for performance improvement
+[advice]
+  addEmptyPastSeg = false    # Disable advice for empty past segments
+  pushNonFastForward = false # Disable non-fast-forward push warnings
+  statusHints = false        # Disable status command hints
+[init]
+  defaultBranch = main # Set default branch name to 'main'
+[status]
+  branch = true            # Show current branch in status output
+  showStash = true         # Show stash information
+  showUntrackedFiles = all # Show all untracked files
+[interactive]
+  diffFilter = delta --color-only # Use delta to filter and beautify diffs
+  singlekey = true                # Allow single-key input for interactive commands
+[delta]
+  navigate = true # Navigate diff sections using n and N
+  light = false   # Set to true for terminals with light backgrounds
+[merge]
+  conflictstyle = diff3 # Show three-way diff format for conflicts
+[diff]
+  colorMoved = default # Highlight moved lines with default colors
 [color]
-branch = auto
-diff = auto
-status = auto
-ui = true
+  ui = true # Enable colored output
 [push]
-autoSetupRemote = true
+  autoSetupRemote = true # Automatically set up remote branches
+  default = current      # Push the current branch by default
+  followTags = true      # Follow tags during push
+[pull]
+  default = current # Pull from the current branch by default
+  rebase = true     # Use rebase instead of merge when pulling
+[rebase]
+  autoStash = true           # Automatically stash changes before rebasing
+  missingCommitsCheck = warn # Warn if commits are missing during rebase
+[log]
+  abbrevCommit = true                              # Abbreviate commit hashes
+  graphColors = blue,yellow,cyan,magenta,green,red # Colors for log graph
+[color "decorate"]
+  HEAD = red
+  branch = blue
+  tag = yellow
+  remoteBranch = magenta
+[color "branch"]
+  current = magenta
+  local = default
+  remote = yellow
+  upstream = green
+  plain = blue
+[branch]
+  sort = -committerdate # Sort branches by committer date descending
+[tag]
+  sort = -taggerdate # Sort tags by tagger date descending
+[pager]
+  branch = false
+  tag = false
+[url "git@github.com:BlockLune/"]
+  insteadOf = "bl:"
+[url "git@github.com:"]
+  insteadOF ="gh:"
+
