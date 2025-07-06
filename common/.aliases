@@ -42,38 +42,12 @@ alias egrep="grep -E --color=auto"
 alias fgrep="grep -F --color=auto"
 alias rg="rg --smart-case --color=auto"
 
-# git
-alias ga="git add --verbose"
-alias gaa="git add --all --verbose"
-alias gb="git branch"
-alias gc!="git commit --verbose --amend"
-alias gc="git commit --verbose"
-alias gcb="git checkout -b"
-alias gcl1="git clone --recurse-submodules --depth=1"
-alias gcl="git clone --recurse-submodules"
-alias gco="git checkout"
-alias gcp="git cherry-pick"
-alias gd="git diff"
-alias gf="git fetch"
-alias gl="git pull"
-alias glog="git log --oneline --decorate --graph"
-alias gm="git merge"
-alias gp="git push"
-alias gr="git remote"
-alias grb="git rebase"
-alias grf="git reflog"
-alias grhh="git reset --hard"
-alias grm="git rm"
-alias grs="git restore"
-alias grst="git restore --staged"
-alias gsh="git show"
-alias gss="git status --short"
-alias gst="git status"
-alias gsta="git stash push"
-
 # neovide
 alias nv="neovide"
 
 # windsurf
 alias ws="windsurf"
+
+# git
+[[ -f ~/.gitaliases ]] && source ~/.gitaliases
 
