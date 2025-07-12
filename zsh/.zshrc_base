@@ -70,14 +70,12 @@ setopt HIST_SAVE_NO_DUPS
 #
 
 # [mise](https://mise.jdx.dev/)  
-if (( ${+commands[mise]} )) && [[ -z "${MISE_ACTIVATED:-}" ]]; then
+if (( ${+commands[mise]} )); then
   eval "$(mise activate zsh)"
-  export MISE_ACTIVATED=1
 fi
 
 # [zoxide](https://github.com/ajeetdsouza/zoxide)  
-if (( ${+commands[zoxide]} )) && [[ -z "${ZOXIDE_ACTIVATED:-}" ]]; then
+if (( ${+commands[zoxide]} )) ; then
   eval "$(zoxide init zsh --cmd cd)"
-  export ZOXIDE_ACTIVATED=1
 fi
 
