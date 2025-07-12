@@ -42,14 +42,15 @@ source ${ZIM_HOME}/init.zsh
 # Do not log out with <Ctrl-D>
 setopt IGNORE_EOF
 
-#
 # History
-#
-
-export SAVEHIST=$HISTSIZE
 setopt EXTENDED_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_SAVE_NO_DUPS
+
+# Option(s) set in the environment module but may causes lag
+#unsetopt SHARE_HISTORY
+unsetopt EXTENDED_GLOB
+
 
 #
 # External source
