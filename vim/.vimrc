@@ -6,7 +6,6 @@
 filetype plugin on
 " vim-plug
 call plug#begin()
-Plug 'Yggdroot/indentLine'
 Plug 'ap/vim-buftabline'
 " Plug 'bkad/CamelCaseMotion'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -140,4 +139,3 @@ let g:hardtime_showmsg = 1
 
 " vim-which-key
 nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
-
