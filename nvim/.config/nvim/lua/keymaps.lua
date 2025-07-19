@@ -6,8 +6,17 @@
 vim.g.mapleader = " "
 
 -- Window Split
-vim.keymap.set("n", "<leader>|", ":vsp<cr>", { desc = "Vertically Split" })
-vim.keymap.set("n", "<leader>-", ":sp<cr>", { desc = "Horizontally Split" })
+if vim.g.vscode then
+    vim.keymap.set("n", "<leader>|", function()
+        require('vscode').action('workbench.action.splitEditorRight')
+    end, { desc = "Vertically Split" })
+    vim.keymap.set("n", "<leader>-", function()
+        require('vscode').action('workbench.action.splitEditorDown')
+    end, { desc = "Horizontally Split" })
+else
+    vim.keymap.set("n", "<leader>|", ":vsp<cr>", { desc = "Vertically Split" })
+    vim.keymap.set("n", "<leader>-", ":sp<cr>", { desc = "Horizontally Split" })
+end
 
 -- Navigate
 vim.keymap.set("n", "<c-h>", "<c-w>h", { desc = "Navigate Left" })
@@ -30,11 +39,21 @@ vim.keymap.set("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=g
 vim.keymap.set("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 
 -- Bufferline
-vim.keymap.set("n", "H", ":bprev<cr>", { desc = "Switch to Previous Buffer" })
-vim.keymap.set("n", "L", ":bnext<cr>", { desc = "Switch to Next Buffer" })
+if vim.g.vscode then
+    vim.keymap.set("n", "H", function()
+        require('vscode').action('workbench.action.previousEditor')
+    end, { desc = "Previous Tab" })
+    vim.keymap.set("n", "L", function()
+        require('vscode').action('workbench.action.nextEditor')
+    end, { desc = "Next Tab" })
+else
+    vim.keymap.set("n", "H", ":bprev<cr>", { desc = "Switch to Previous Buffer" })
+    vim.keymap.set("n", "L", ":bnext<cr>", { desc = "Switch to Next Buffer" })
+end
 
 -- MISC
 vim.keymap.set("i", "jk", "<esc>", { desc = "Return to Normal Mode with `jk`" })
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "p", "pgvy")
 vim.keymap.set("n", "<leader>qq", ":qa<cr>", { desc = "Quit All" })
+
