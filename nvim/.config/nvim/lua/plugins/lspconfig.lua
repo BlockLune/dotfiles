@@ -1,6 +1,5 @@
 return {
     'neovim/nvim-lspconfig',
-    enabled = not vim.g.vscode,
     dependencies = { 'saghen/blink.cmp' },
     config = function()
         vim.diagnostic.config({

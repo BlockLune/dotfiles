@@ -29,20 +29,20 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    require("plugins.autopairs"),
-    require("plugins.blinkcmp"),
-    require("plugins.bufferline"),
-    require("plugins.catppuccin"),
-    require("plugins.hardtime"),
-    require("plugins.lazydev"),
-    require("plugins.lspconfig"),
-    require("plugins.mason"),
-    require("plugins.snacks"),
-    require("plugins.surround"),
-    require("plugins.telescope"),
-    require("plugins.tree"),
-    require("plugins.treesitter"),
-    require("plugins.whichkey"),
+    { import = "plugins.autopairs", cond = true },
+    { import = "plugins.blinkcmp", cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.bufferline", cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.catppuccin", cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.hardtime", cond = true },
+    { import = "plugins.lazydev", cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.lspconfig", cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.mason", cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.snacks", cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.surround", cond = true },
+    { import = "plugins.telescope", cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.tree", cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.treesitter", cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.wakatime", cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.whichkey", cond = (function() return not vim.g.vscode end) },
 })
-
 

@@ -1,6 +1,5 @@
 return {
     "folke/lazydev.nvim",
-    enabled = not vim.g.vscode,
     ft = "lua",
     opts = {
         library = {

@@ -1,6 +1,5 @@
 return {
     "saghen/blink.cmp",
-    enabled = not vim.g.vscode,
     version = '1.*',
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
