@@ -6,6 +6,10 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<cr>", { desc = "Toggle
 
 -- snacks.nvim
 ---@module "snacks"
-vim.keymap.set("n", "<leader>bd", function() Snacks.bufdelete() end, { desc = "Delete Buffer" })
-vim.keymap.set("n", "<leader>bo", function() Snacks.bufdelete.other() end, { desc = "Delete Other Buffers" })
+vim.keymap.set("n", "<leader>bd", function()
+    Snacks.bufdelete()
+end, { desc = "Delete Buffer" })
+vim.keymap.set("n", "<leader>bo", function()
+    Snacks.bufdelete.other()
+end, { desc = "Delete Other Buffers" })
 
