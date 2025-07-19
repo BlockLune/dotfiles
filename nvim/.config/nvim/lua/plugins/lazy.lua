@@ -14,8 +14,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
-
 require("lazy").setup({
     {
         'windwp/nvim-autopairs',
@@ -38,12 +36,14 @@ require("lazy").setup({
 
     {
         'nvim-telescope/telescope.nvim',
+        enabled = not vim.g.vscode,
         tag = '0.1.8',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
     {
         "nvim-tree/nvim-tree.lua",
+        enabled = not vim.g.vscode,
         version = "*",
         lazy = false,
         dependencies = {
@@ -56,6 +56,7 @@ require("lazy").setup({
 
     {
         "akinsho/bufferline.nvim",
+        enabled = not vim.g.vscode,
         version = "*",
         dependencies = {
             "nvim-tree/nvim-web-devicons",
@@ -89,6 +90,7 @@ require("lazy").setup({
 
     {
         "nvim-treesitter/nvim-treesitter",
+        enabled = not vim.g.vscode,
         build = ":TSUpdate",
         config = function ()
             local configs = require("nvim-treesitter.configs")
@@ -132,6 +134,7 @@ require("lazy").setup({
 
     {
         'neovim/nvim-lspconfig',
+        enabled = not vim.g.vscode,
         dependencies = { 'saghen/blink.cmp' },
         config = function()
             vim.diagnostic.config({
