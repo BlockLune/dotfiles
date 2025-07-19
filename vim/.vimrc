@@ -64,12 +64,18 @@ vnoremap p pgvy
 
 nnoremap <leader>\| :vsp<CR>
 nnoremap <leader>- :sp<CR>
+
 nnoremap <leader>qq :qa<CR>
 
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+nmap <leader><up> :resize +2<cr>
+nmap <leader><down> :resize -2<cr>
+nmap <leader><left> :vertical resize -2<cr>
+nmap <leader><right> :vertical resize +2<cr>
 
 " The function BufDel is from Bclose of
 " https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
