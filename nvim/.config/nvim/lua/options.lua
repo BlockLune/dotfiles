@@ -1,5 +1,5 @@
 vim.opt.backup = false
-vim.opt.clipboard=unnamed
+vim.opt.clipboard="unnamed"
 vim.opt.encoding = "utf-8"
 vim.opt.errorbells = false
 vim.opt.expandtab = true
