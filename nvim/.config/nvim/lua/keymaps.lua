@@ -91,4 +91,9 @@ if vim.g.vscode then
     vim.keymap.set("n", "<leader>e", function()
         require("vscode").action("workbench.view.explorer")
     end)
+
+    -- Conform-like keymaps
+    vim.keymap.set("n", "<leader>cf", function()
+        require("vscode").action("editor.action.format")
+    end)
 end

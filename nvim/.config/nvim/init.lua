@@ -33,7 +33,7 @@ require("lazy").setup({
     { import = "plugins.blinkcmp",                 cond = (function() return not vim.g.vscode end) },
     { import = "plugins.bufferline",               cond = (function() return not vim.g.vscode end) },
     { import = "plugins.catppuccin",               cond = (function() return not vim.g.vscode end) },
-    { import = "plugins.conform",                  cond = true },
+    { import = "plugins.conform",                  cond = (function() return not vim.g.vscode end) },
     { import = "plugins.hardtime",                 cond = true },
     { import = "plugins.lazydev",                  cond = (function() return not vim.g.vscode end) },
     { import = "plugins.lspconfig",                cond = (function() return not vim.g.vscode end) },
