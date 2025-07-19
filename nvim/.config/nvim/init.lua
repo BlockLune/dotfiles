@@ -38,6 +38,7 @@ require("lazy").setup({
     require("plugins.lspconfig"),
     require("plugins.mason"),
     require("plugins.snacks"),
+    require("plugins.surround"),
     require("plugins.telescope"),
     require("plugins.tree"),
     require("plugins.treesitter"),
