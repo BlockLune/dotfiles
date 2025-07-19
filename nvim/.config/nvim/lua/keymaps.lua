@@ -36,4 +36,5 @@ vim.keymap.set("n", "L", ":bnext<cr>", { desc = "Switch to Next Buffer" })
 -- MISC
 vim.keymap.set("i", "jk", "<esc>", { desc = "Return to Normal Mode with `jk`" })
 vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "p", "pgvy")
 vim.keymap.set("n", "<leader>qq", ":qa<cr>", { desc = "Quit All" })
