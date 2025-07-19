@@ -37,6 +37,7 @@ require("lazy").setup({
     { import = "plugins.lazydev", cond = (function() return not vim.g.vscode end) },
     { import = "plugins.lspconfig", cond = (function() return not vim.g.vscode end) },
     { import = "plugins.mason", cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.repeat", cond = true },
     { import = "plugins.snacks", cond = (function() return not vim.g.vscode end) },
     { import = "plugins.surround", cond = true },
     { import = "plugins.telescope", cond = (function() return not vim.g.vscode end) },
