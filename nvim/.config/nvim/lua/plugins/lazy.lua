@@ -16,10 +16,16 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     {
-       "m4xshen/hardtime.nvim",
-       lazy = false,
-       dependencies = { "MunifTanjim/nui.nvim" },
-       opts = {},
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
+    },
+
+    {
+        "m4xshen/hardtime.nvim",
+        lazy = false,
+        dependencies = { "MunifTanjim/nui.nvim" },
+        opts = {},
     },
 
     {
