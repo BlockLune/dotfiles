@@ -92,4 +92,3 @@ if vim.g.vscode then
         require("vscode").action("workbench.view.explorer")
     end)
 end
-

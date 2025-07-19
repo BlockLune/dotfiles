@@ -19,7 +19,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     if vim.v.shell_error ~= 0 then
         vim.api.nvim_echo({
             { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-            { out, "WarningMsg" },
+            { out,                            "WarningMsg" },
             { "\nPress any key to exit..." },
         }, true, {})
         vim.fn.getchar()
@@ -29,22 +29,22 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { import = "plugins.autopairs", cond = true },
-    { import = "plugins.blinkcmp", cond = (function() return not vim.g.vscode end) },
-    { import = "plugins.bufferline", cond = (function() return not vim.g.vscode end) },
-    { import = "plugins.catppuccin", cond = (function() return not vim.g.vscode end) },
-    { import = "plugins.hardtime", cond = true },
-    { import = "plugins.lazydev", cond = (function() return not vim.g.vscode end) },
-    { import = "plugins.lspconfig", cond = (function() return not vim.g.vscode end) },
-    { import = "plugins.mason", cond = (function() return not vim.g.vscode end) },
-    { import = "plugins.repeat", cond = true },
-    { import = "plugins.snacks", cond = (function() return not vim.g.vscode end) },
-    { import = "plugins.surround", cond = true },
-    { import = "plugins.telescope", cond = (function() return not vim.g.vscode end) },
-    { import = "plugins.tree", cond = (function() return not vim.g.vscode end) },
-    { import = "plugins.treesitter", cond = true },
+    { import = "plugins.autopairs",                cond = true },
+    { import = "plugins.blinkcmp",                 cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.bufferline",               cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.catppuccin",               cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.conform",                  cond = true },
+    { import = "plugins.hardtime",                 cond = true },
+    { import = "plugins.lazydev",                  cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.lspconfig",                cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.mason",                    cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.repeat",                   cond = true },
+    { import = "plugins.snacks",                   cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.surround",                 cond = true },
+    { import = "plugins.telescope",                cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.tree",                     cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.treesitter",               cond = true },
     { import = "plugins.ts-context-commentstring", cond = true },
-    { import = "plugins.wakatime", cond = (function() return not vim.g.vscode end) },
-    { import = "plugins.whichkey", cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.wakatime",                 cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.whichkey",                 cond = (function() return not vim.g.vscode end) },
 })
-
