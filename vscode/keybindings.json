@@ -1,130 +1,57 @@
 [
+  // Move Lines
   {
+    "command": "vscode-neovim.send",
+    "key": "alt+j",
+    "when": "editorTextFocus",
+    "args": "<A-j>"
+  },
+  {
+    "command": "vscode-neovim.send",
+    "key": "alt+k",
+    "when": "editorTextFocus",
+    "args": "<A-k>"
+  },
+  // Navigation
+  {
+    "command": "workbench.action.navigateLeft",
     "key": "ctrl+h",
-    "command": "workbench.action.navigateLeft"
   },
   {
+    "command": "workbench.action.navigateRight",
     "key": "ctrl+l",
-    "command": "workbench.action.navigateRight"
   },
   {
+    "command": "workbench.action.navigateUp",
     "key": "ctrl+k",
-    "command": "workbench.action.navigateUp"
   },
   {
+    "command": "workbench.action.navigateDown",
     "key": "ctrl+j",
-    "command": "workbench.action.navigateDown"
   },
+  // Terminal
   {
-    "key": "a",
-    "command": "explorer.newFile",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "f",
-    "command": "explorer.newFolder",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "r",
-    "command": "renameFile",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "x",
-    "command": "filesExplorer.cut",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "y",
-    "command": "filesExplorer.copy",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
-  },
-  {
-    "key": "p",
-    "command": "filesExplorer.paste",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "enter", // this is for macOS, on which the default behavior is renaming
-    "command": "list.select",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "ctrl+tab",
-    "command": "workbench.action.nextEditorInGroup"
-  },
-  {
-    "key": "ctrl+/",
-    "command": "-editor.action.accessibleViewAcceptInlineCompletion",
-    "when": "accessibleViewIsShown && accessibleViewCurrentProviderId == 'inlineCompletions'"
-  },
-  {
-    "key": "ctrl+/",
-    "command": "-github.copilot.acceptCursorPanelSolution",
-    "when": "github.copilot.activated && github.copilot.panelVisible && activeWebviewPanelId == 'GitHub Copilot Suggestions'"
-  },
-  {
-    "key": "ctrl+/",
-    "command": "-notebook.commentSelectedCells",
-    "when": "notebookEditable && notebookEditorFocused && !inputFocus"
-  },
-  {
-    "key": "ctrl+/",
-    "command": "-editor.action.commentLine",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+/",
-    "command": "-workbench.action.terminal.sendSequence",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+/",
-    "command": "-workbench.action.chat.attachContext",
-    "when": "inChatInput && chatLocation == 'panel' || config.chat.experimental.variables.editor && inChatInput && chatLocation == 'editor' || config.chat.experimental.variables.notebook && inChatInput && chatLocation == 'notebook' || config.chat.experimental.variables.terminal && inChatInput && chatLocation == 'terminal'"
-  },
-  {
-    "key": "ctrl+/",
-    "command": "-toggleExplainMode",
-    "when": "suggestWidgetVisible"
-  },
-  {
-    "key": "ctrl+`",
-    "command": "-workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
-  {
-    "key": "ctrl+/",
     "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
+    "key": "ctrl+/",
   },
   {
-    "key": "ctrl+shift+/",
-    "command": "-workbench.action.chat.attachTools",
-    "when": "inChatInput && chatMode == 'agent'"
-  },
-  {
-    "key": "ctrl+shift+/",
     "command": "workbench.action.terminal.new",
-    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    "key": "cmd+t",
+    "when": "isMac && terminalFocus"
   },
   {
-    "key": "ctrl+shift+`",
-    "command": "-workbench.action.terminal.new",
-    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    "command": "workbench.action.terminal.new",
+    "key": "ctrl+t",
+    "when": "(isWindows || isLinux) && terminalFocus"
   },
   {
-    "key": "ctrl+e",
-    "command": "-workbench.action.quickOpen"
+    "command": "workbench.action.terminal.kill",
+    "key": "cmd+w",
+    "when": "isMac && terminalFocus"
   },
   {
-    "key": "ctrl+p",
-    "command": "-workbench.action.quickOpen"
-  },
-  {
-    "key": "ctrl+p",
-    "command": "workbench.action.quickOpen",
-    "when": "!terminal.active"
+    "command": "workbench.action.terminal.kill",
+    "key": "ctrl+w",
+    "when": "(isWindows || isLinux) && terminalFocus"
   }
 ]

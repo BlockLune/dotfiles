@@ -3,6 +3,7 @@
     // tools
     "aaron-bond.better-comments",
     "antfu.iconify",
+    "asvetliakov.vscode-neovim",
     "eamodio.gitlens",
     "esbenp.prettier-vscode",
     "foxundermoon.shell-format",
@@ -15,7 +16,6 @@
     "saoudrizwan.claude-dev",
     "usernamehw.errorlens",
     "vincaslt.highlight-matching-tag",
-    "vscodevim.vim",
 
     // language and file support
     "astro-build.astro-vscode",
