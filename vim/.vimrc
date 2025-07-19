@@ -6,7 +6,6 @@
 filetype plugin on
 " vim-plug
 call plug#begin()
-Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'Yggdroot/indentLine'
 Plug 'ap/vim-buftabline'
 " Plug 'bkad/CamelCaseMotion'
