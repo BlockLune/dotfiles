@@ -103,8 +103,8 @@ endfunction
 nmap <leader>bd :call BufDel()<CR>
 nmap <leader>bo :call BufOnly()<CR>
 nmap <leader>bl :ls<CR>
-nmap L :bprev<CR>
-nmap H :bnext<CR>
+nmap H :bprev<CR>
+nmap L :bnext<CR>
 
 " ctrlp
 let g:ctrlp_map = '<leader><leader>'
