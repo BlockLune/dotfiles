@@ -1,8 +1,9 @@
-vim.g.mapleader = " "
+-- ---------------------
+-- NeoVim Native Keymaps
+-- ---------------------
 
-vim.keymap.set("i", "jk", "<esc>", { desc = "Return to Normal Mode with `jk`" })
-vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<leader>qq", ":qa<cr>", { desc = "Quit All" })
+-- My Leader Key
+vim.g.mapleader = " "
 
 -- Window Split
 vim.keymap.set("n", "<leader>|", ":vsp<cr>", { desc = "Vertically Split" })
@@ -32,3 +33,7 @@ vim.keymap.set("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<c
 vim.keymap.set("n", "H", ":bprev<cr>", { desc = "Switch to Previous Buffer" })
 vim.keymap.set("n", "L", ":bnext<cr>", { desc = "Switch to Next Buffer" })
 
+-- MISC
+vim.keymap.set("i", "jk", "<esc>", { desc = "Return to Normal Mode with `jk`" })
+vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "<leader>qq", ":qa<cr>", { desc = "Quit All" })

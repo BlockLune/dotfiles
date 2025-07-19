@@ -1,3 +1,7 @@
+-- ---------------------
+-- NeoVim Native Options
+-- ---------------------
+
 vim.opt.backup = false
 vim.opt.clipboard="unnamed"
 vim.opt.encoding = "utf-8"
@@ -15,5 +19,6 @@ vim.opt.smartindent = true
 vim.opt.smarttab = true
 vim.opt.swapfile = false
 vim.opt.tabstop = 2
+vim.opt.termguicolors = true
 vim.opt.visualbell = true
 
