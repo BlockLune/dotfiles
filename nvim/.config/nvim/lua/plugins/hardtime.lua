@@ -3,7 +3,4 @@ return {
     lazy = false,
     dependencies = { "MunifTanjim/nui.nvim" },
     opts = {},
-    config = function()
-        require("hardtime").setup()
-    end
 }
