@@ -2,33 +2,72 @@
 # BlockLune's aliases of git commands
 # -----------------------------------
 
+# git add
 alias ga="git add --verbose"
 alias gaa="git add --all --verbose"
 alias gap="git add --patch"
+
+# git branch
 alias gb="git branch"
+
+# git blame
+alias gblame="git blame"
+
+# git commit
 alias gc!="git commit --verbose --amend"
 alias gc="git commit --verbose"
+
+# git checkout
 alias gcb="git checkout -b"
+alias gco="git checkout"
+
+# git clone
 alias gcl1="git clone --recurse-submodules --depth=1"
 alias gcl="git clone --recurse-submodules"
-alias gco="git checkout"
+
+# git cherry-pick
 alias gcp="git cherry-pick"
+
+# git diff
 alias gd="git diff"
+alias gds="git diff --stat"
+
+# git fetch
 alias gf="git fetch"
+
+# git pull
 alias gl="git pull"
+
+# git log
 alias glog="git log --graph --pretty=format:'%C(magenta)%h %C(white) %an %ar%C(auto) %D%n%s%n'"
+
+# git merge
 alias gm="git merge"
+
+# git push
 alias gp="git push"
-alias gr="git remote"
-alias gra="git remote add"
+
+# git rebase
 alias grb="git rebase"
+
+# git remote
+alias gremote="git remote"
+
+# git restore
+alias grestore="git restore"
+
+# git reflog
 alias grf="git reflog"
-alias grhh="git reset --hard"
-alias grm="git rm"
-alias grs="git restore"
-alias grst="git restore --staged"
-alias gsh="git show"
+
+# git reset
+alias grh="git reset --hard"
+
+# git show
+alias gshow="git show"
+
+# git status
 alias gss="git status --short"
-alias gst="git status"
-alias gsta="git stash push"
+
+# git stash
+alias gstash="git stash"
 
