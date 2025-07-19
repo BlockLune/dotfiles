@@ -80,3 +80,8 @@ if (( ${+commands[zoxide]} )) ; then
   eval "$(zoxide init zsh --cmd cd)"
 fi
 
+if (( ${+commands[nvim]} )) ; then
+  export EDITOR=nvim
+  alias vim=nvim
+fi
+
