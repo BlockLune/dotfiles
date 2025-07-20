@@ -38,6 +38,7 @@ require("lazy").setup({
     { import = "plugins.hardtime",                 cond = true },
     { import = "plugins.hlslens",                  cond = (function() return not vim.g.vscode end) },
     { import = "plugins.lazydev",                  cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.lightbulb",                cond = (function() return not vim.g.vscode end) },
     { import = "plugins.lspconfig",                cond = (function() return not vim.g.vscode end) },
     { import = "plugins.mason",                    cond = (function() return not vim.g.vscode end) },
     { import = "plugins.repeat",                   cond = true },
