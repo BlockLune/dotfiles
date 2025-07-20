@@ -96,30 +96,45 @@ end
 -- LSP
 --
 
-vim.keymap.set("n", "K", vim.lsp.buf.hover)
-vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "[Code] Rename" })
-vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "[LSP] Show Diagnostic" })
+if not vim.g.vscode then
+    vim.keymap.set("n", "K", vim.lsp.buf.hover)
+    vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "[Code] Rename" })
+    vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "[LSP] Show Diagnostic" })
 
-vim.keymap.set("n", "[e", function()
-    vim.diagnostic.jump({ count = -1, severity = vim.diagnostic.severity.ERROR })
-end, { desc = "[LSP] Prev ERROR" })
-vim.keymap.set("n", "]e", function()
-    vim.diagnostic.jump({ count = 1, severity = vim.diagnostic.severity.ERROR })
-end, { desc = "[LSP] Next ERROR" })
-vim.keymap.set("n", "[w", function()
-    vim.diagnostic.jump({ count = -1, severity = vim.diagnostic.severity.WARN })
-end, { desc = "[LSP] Prev WARNING" })
-vim.keymap.set("n", "]w", function()
-    vim.diagnostic.jump({ count = 1, severity = vim.diagnostic.severity.WARN })
-end, { desc = "[LSP] Next WARNING" })
+    vim.keymap.set("n", "[e", function()
+        vim.diagnostic.jump({ count = -1, severity = vim.diagnostic.severity.ERROR })
+    end, { desc = "[LSP] Prev ERROR" })
+    vim.keymap.set("n", "]e", function()
+        vim.diagnostic.jump({ count = 1, severity = vim.diagnostic.severity.ERROR })
+    end, { desc = "[LSP] Next ERROR" })
+    vim.keymap.set("n", "[w", function()
+        vim.diagnostic.jump({ count = -1, severity = vim.diagnostic.severity.WARN })
+    end, { desc = "[LSP] Prev WARNING" })
+    vim.keymap.set("n", "]w", function()
+        vim.diagnostic.jump({ count = 1, severity = vim.diagnostic.severity.WARN })
+    end, { desc = "[LSP] Next WARNING" })
 
--- Same to the default keymaps, but with desc updated (See `:h vim.diagnostic`)
-vim.keymap.set("n", "[d", function()
-    vim.diagnostic.jump({ count = -1 })
-end, { desc = "[LSP] Prev Diagnostic" })
-vim.keymap.set("n", "]d", function()
-    vim.diagnostic.jump({ count = 1 })
-end, { desc = "[LSP] Next Diagnostic" })
+    -- Same to the default keymaps, but with desc updated (See `:h vim.diagnostic`)
+    vim.keymap.set("n", "[d", function()
+        vim.diagnostic.jump({ count = -1 })
+    end, { desc = "[LSP] Prev Diagnostic" })
+    vim.keymap.set("n", "]d", function()
+        vim.diagnostic.jump({ count = 1 })
+    end, { desc = "[LSP] Next Diagnostic" })
+else
+    vim.keymap.set("n", "<leader>cr", function()
+        require("vscode").action("editor.action.rename")
+    end)
+    vim.keymap.set("n", "<leader>d", function()
+        require("vscode").action("editor.action.showHover")
+    end)
+    vim.keymap.set("n", "[d", function()
+        require("vscode").action("editor.action.marker.prevInFiles")
+    end)
+    vim.keymap.set("n", "]d", function()
+        require("vscode").action("editor.action.marker.nextInFiles")
+    end)
+end
 
 
 
@@ -139,6 +154,11 @@ vim.keymap.set("n", "<leader>qq", ":qa<cr>", { desc = "Quit All" })
 --
 
 if vim.g.vscode then
+    -- Conform-like keymaps
+    vim.keymap.set("n", "<leader>cf", function()
+        require("vscode").action("editor.action.format")
+    end)
+
     -- Telescope-like keymaps
     vim.keymap.set("n", "<leader><space>", function()
         require("vscode").action("workbench.action.quickOpen")
@@ -149,14 +169,39 @@ if vim.g.vscode then
     vim.keymap.set("n", "<leader>fg", function()
         require("vscode").action("workbench.view.search")
     end)
+    vim.keymap.set("n", "<leader>sd", function() -- diagnostics in vim -> problems in vscode
+        require("vscode").action("workbench.actions.view.problems")
+    end)
+    vim.keymap.set("n", "<leader>sl", function() -- loclist in vim -> problems in vscode
+        require("vscode").action("workbench.actions.view.problems")
+    end)
+    vim.keymap.set("n", "<leader>sq", function() -- quickfix in vim -> problems in vscode
+        require("vscode").action("workbench.actions.view.problems")
+    end)
+
+    -- TinyCodeAction-like keymaps
+    vim.keymap.set("n", "<leader>ca", function() -- code action in vim -> quickfix in vscode
+        require("vscode").action("editor.action.quickFix")
+    end)
+
+    -- TodoComments-like keymaps (`gruntfuggly.todo-tree` required)
+    vim.keymap.set("n", "<leader>st", function()
+        require("vscode").action("workbench.view.extension.todo-tree-container")
+    end)
 
     -- Tree-like keymaps
     vim.keymap.set("n", "<leader>e", function()
         require("vscode").action("workbench.view.explorer")
     end)
 
-    -- Conform-like keymaps
-    vim.keymap.set("n", "<leader>cf", function()
-        require("vscode").action("editor.action.format")
+    -- Gitsigns-like keymaps
+    vim.keymap.set("n", "[c", function()
+        require("vscode").action("workbench.action.editor.previousChange")
+    end)
+    vim.keymap.set("n", "]c", function()
+        require("vscode").action("workbench.action.editor.nextChange")
+    end)
+    vim.keymap.set("n", "<leader>gq", function()
+        require("vscode").action("workbench.view.scm") -- The Source Control Panel
     end)
 end
