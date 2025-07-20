@@ -14,7 +14,7 @@ return {
             end,
             noremap = true,
             silent = true,
-            desc = "[Code] Code Action",
+            desc = "[Code] Action",
         }
     }
 }

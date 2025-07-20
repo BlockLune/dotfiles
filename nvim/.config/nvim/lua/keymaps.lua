@@ -21,8 +21,8 @@ end
 
 local vertical_split, horizontal_split = get_split_actions()
 
-vim.keymap.set("n", "<leader>|", vertical_split, { desc = "Vertically Split" })
-vim.keymap.set("n", "<leader>-", horizontal_split, { desc = "Horizontally Split" })
+vim.keymap.set("n", "<leader>|", vertical_split, { desc = "Split Vertically" })
+vim.keymap.set("n", "<leader>-", horizontal_split, { desc = "Split Horizontally" })
 
 
 -- Navigate

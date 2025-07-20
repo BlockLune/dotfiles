@@ -24,7 +24,7 @@ return {
                 end
 
                 vim.keymap.set("n", "K", vim.lsp.buf.hover)
-                vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { buffer = env.buf, desc = "[LSP] Code Rename" })
+                vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { buffer = env.buf, desc = "[Code] Rename" })
                 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float,
                     { buffer = env.buf, desc = "[LSP] Show Diagnostic" })
                 vim.keymap.set("n", "]d", diagnostic_goto(true), { buffer = env.buf, desc = "[LSP] Next Diagnostic" })

@@ -32,28 +32,28 @@ return {
             function()
                 Snacks.bufdelete()
             end,
-            desc = "Delete Buffer",
+            desc = "[Buffer] Delete Current",
         },
         {
             "<leader>bo",
             function()
                 Snacks.bufdelete.other()
             end,
-            desc = "Delete Other Buffers",
+            desc = "[Buffer] Delete Other",
         },
         {
             "<leader>uD",
             function()
                 Snacks.dim()
             end,
-            desc = "Toggle Dimming",
+            desc = "[UI] Toggle Dimming",
         },
         {
             "<leader>gb",
             function()
                 Snacks.git.blame_line()
             end,
-            desc = "Git Blame Line"
+            desc = "[Git] Blame Line"
         },
         {
             "<c-g>",

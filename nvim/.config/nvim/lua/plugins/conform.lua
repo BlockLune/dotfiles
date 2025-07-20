@@ -9,7 +9,7 @@ return {
                 require("conform").format({ async = true })
             end,
             mode = "",
-            desc = "Format buffer",
+            desc = "[Code] Format",
         },
     },
     ---@module "conform"

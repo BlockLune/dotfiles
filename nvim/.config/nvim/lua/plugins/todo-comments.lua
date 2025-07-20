@@ -21,7 +21,7 @@ return {
         {
             "<leader>st",
             ":TodoTelescope<cr>",
-            desc = "Todo"
+            desc = "[Show] TODOs"
         },
     },
 }
