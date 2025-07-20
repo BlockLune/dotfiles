@@ -15,24 +15,24 @@
   // Navigation
   {
     "command": "workbench.action.navigateLeft",
-    "key": "ctrl+h",
+    "key": "ctrl+h"
   },
   {
     "command": "workbench.action.navigateRight",
-    "key": "ctrl+l",
+    "key": "ctrl+l"
   },
   {
     "command": "workbench.action.navigateUp",
-    "key": "ctrl+k",
+    "key": "ctrl+k"
   },
   {
     "command": "workbench.action.navigateDown",
-    "key": "ctrl+j",
+    "key": "ctrl+j"
   },
   // Terminal
   {
     "command": "workbench.action.terminal.toggleTerminal",
-    "key": "ctrl+/",
+    "key": "ctrl+/"
   },
   {
     "command": "workbench.action.terminal.new",
@@ -53,5 +53,16 @@
     "command": "workbench.action.terminal.kill",
     "key": "ctrl+w",
     "when": "(isWindows || isLinux) && terminalFocus"
+  },
+  // Disable some default keybindings
+  {
+    "command": "-workbench.action.quickOpen",
+    "key": "ctrl+e",
+    "when": "isWindows || isLinux"
+  },
+  {
+    "command": "-workbench.action.quickOpen",
+    "key": "ctrl+p",
+    "when": "isWindows || isLinux"
   }
 ]
