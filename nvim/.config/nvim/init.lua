@@ -46,6 +46,7 @@ require("lazy").setup({
     { import = "plugins.treesitter",               cond = true },
     { import = "plugins.trim",                     cond = true },
     { import = "plugins.ts-context-commentstring", cond = true },
+    { import = "plugins.undotree",                 cond = (function() return not vim.g.vscode end) },
     { import = "plugins.wakatime",                 cond = (function() return not vim.g.vscode end) },
     { import = "plugins.whichkey",                 cond = (function() return not vim.g.vscode end) },
 })
