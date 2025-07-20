@@ -25,6 +25,7 @@ return {
         lazygit = { enabled = true },
         notifier = { enabled = true },
         notify = { enabled = true },
+        terminal = { enabled = true },
     },
     keys = {
         {
@@ -68,6 +69,33 @@ return {
                 Snacks.notifier.show_history()
             end,
             desc = "Show Notification History"
+        },
+        {
+            "<c-/>",
+            function()
+                Snacks.terminal.toggle()
+            end,
+            mode = { "n", "t" },
+            desc = "Toggle Terminal",
+        },
+        {
+            "<c-t>",
+            function()
+                Snacks.terminal.open()
+            end,
+            mode = { "t" },
+            desc = "Open another new terminal in terminal",
+        },
+        {
+            "<c-w>",
+            function()
+                local terminal = Snacks.terminal.get()
+                if terminal then
+                    terminal:close()
+                end
+            end,
+            mode = { "t" },
+            desc = "Close the current terminal",
         },
     }
 }
