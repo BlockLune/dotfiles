@@ -1,6 +1,9 @@
+-- ---------------------------------
+-- BlockLune's Wezterm Configuration
+-- ---------------------------------
+
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
-
 
 -- Platform detection
 local is_windows = wezterm.target_triple == "x86_64-pc-windows-msvc"
@@ -15,14 +18,14 @@ config.window_close_confirmation = "NeverPrompt"
 config.window_padding = { left = 16, right = 16, top = 16, bottom = 16 }
 
 -- Color scheme configuration
-local light_theme = "GitHub" -- or "Catppuccin Latte", "Gruvbox (Gogh)", etc.
-local dark_theme = "GitHub Dark" -- or "Dracula (Official)", "Gruvbox Dark (Gogh)", etc.
+local light_theme = "Gruvbox (Gogh)" -- or "Github", "Catppuccin Latte", etc.
+local dark_theme = "Gruvbox Dark (Gogh)" -- or "GitHub Dark", "Catppuccin Mocha", "Dracula (Official)", etc.
 local static_theme = dark_theme
 
 local function scheme_for_appearance(appearance)
   -- If static_theme is set, use static theme
   -- Autodetection is not available on Linux, so static theme is always applied on Linux
-  if not static_theme == "" or is_linux then
+  if not (static_theme == "") or is_linux then
     return static_theme
   end
 
@@ -116,8 +119,6 @@ config.keys = create_key_bindings()
 -- Platform-specific configurations
 if is_windows then
   config.default_prog = { "C:\\Program Files\\PowerShell\\7\\pwsh.exe" }
-  config.win32_system_backdrop = "Mica"
-  config.window_background_opacity = 0
 elseif is_macos then
   config.macos_window_background_blur = 20
   config.window_background_opacity = 0.75
