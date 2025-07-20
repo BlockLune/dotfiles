@@ -1,29 +1,84 @@
 {
+  "[css, javascript, json, jsonc, typescript, javascriptreact, typescriptreact, vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "colorize.include": [
+    "**/*.css",
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.less",
+    "**/*.styl",
+    "**/*.js",
+    "**/*.mjs",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.vue"
+  ],
+  "colorize.languages": [
+    "css",
+    "sass",
+    "scss",
+    "less",
+    "postcss",
+    "sss",
+    "stylus",
+    "xml",
+    "svg",
+    "javascript",
+    "vue",
+    "typescript"
+  ],
   "editor.accessibilitySupport": "off",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit",
+    "source.sortMembers": "explicit"
+  },
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 10,
   "editor.fontFamily": "'FiraCode Nerd Font'",
   "editor.fontLigatures": true,
+  "editor.fontSize": 14,
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": "active",
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.lineNumbers": "relative",
-  "editor.rulers": [80, 120],
+  "editor.rulers": [
+    80,
+    100,
+    120
+  ],
   "editor.stickyScroll.enabled": true,
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
+  "emmet.includeLanguages": {
+    "wxml": "html"
+  },
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
+  },
+  "files.associations": {
+    "*.cjson": "jsonc",
+    "*.wxml": "wxml",
+    "*.wxs": "javascript",
+    "*.wxss": "css"
   },
   "files.autoGuessEncoding": true,
   "files.autoSave": "onFocusChange",
   "kiroAgent.enableTabAutocomplete": true,
-  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+  "minapp-vscode.disableAutoConfig": true,
+  "minapp-vscode.wxmlFormatter": "prettier",
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "vscode-neovim.compositeKeys": {
     "jk": {
       "command": "vscode-neovim.escape"
     }
   },
-  "workbench.activityBar.orientation": "vertical"
+  "workbench.activityBar.orientation": "vertical",
+  "workbench.colorTheme": "GitHub Dark",
+  "workbench.iconTheme": "material-icon-theme"
 }
-
