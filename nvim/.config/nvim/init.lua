@@ -40,7 +40,6 @@ require("lazy").setup({
     { import = "plugins.lazydev",                  cond = (function() return not vim.g.vscode end) },
     { import = "plugins.lightbulb",                cond = (function() return not vim.g.vscode end) },
     { import = "plugins.lspconfig",                cond = (function() return not vim.g.vscode end) },
-    { import = "plugins.mason",                    cond = (function() return not vim.g.vscode end) },
     { import = "plugins.repeat",                   cond = true },
     { import = "plugins.scrollbar",                cond = (function() return not vim.g.vscode end) },
     { import = "plugins.snacks",                   cond = (function() return not vim.g.vscode end) },
