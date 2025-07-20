@@ -7,9 +7,11 @@ return {
             ensure_installed = {
                 "c", "lua", "vim", "vimdoc", "javascript", "css", "html"
             },
+            ignore_install = {},
             sync_install = false,
             hightlight = { enabled = true },
             indent = { enabled = true },
+            modules = {},
         })
     end
 }
