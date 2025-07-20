@@ -3,8 +3,13 @@
 -- ----------
 
 
--- NeoVim Native Keymaps
-require("keymaps")
+-- Keymaps (NeoVim Plugins' excluded)
+require("keymaps.common").setup()
+if vim.g.vscode then
+    require("keymaps.vscode").setup()
+else
+    require("keymaps.neovim").setup()
+end
 
 
 -- NeoVim Native Options
