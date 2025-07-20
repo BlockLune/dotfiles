@@ -42,6 +42,7 @@ require("lazy").setup({
     { import = "plugins.snacks",                   cond = (function() return not vim.g.vscode end) },
     { import = "plugins.surround",                 cond = true },
     { import = "plugins.telescope",                cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.todo-comments",            cond = (function() return not vim.g.vscode end) },
     { import = "plugins.tree",                     cond = (function() return not vim.g.vscode end) },
     { import = "plugins.treesitter",               cond = true },
     { import = "plugins.trim",                     cond = true },
