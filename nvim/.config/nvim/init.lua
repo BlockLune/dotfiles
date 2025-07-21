@@ -60,4 +60,5 @@ require("lazy").setup({
     { import = "plugins.undotree",                 cond = (function() return not vim.g.vscode end) },
     { import = "plugins.wakatime",                 cond = (function() return not vim.g.vscode end) },
     { import = "plugins.whichkey",                 cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.yanky",                    cond = true },
 })
