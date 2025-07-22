@@ -3,7 +3,7 @@
 # -----------------------------
 
 # Set codepage to 65001 (UTF-8) on Windows
-# See https://dominikrys.com/posts/zsh-in-git-bash-on-windows/ 
+# See https://dominikrys.com/posts/zsh-in-git-bash-on-windows/
 if [[ "$OSTYPE" == "msys" ]]; then
     chcp.com 65001 &> /dev/null
 fi
@@ -17,10 +17,10 @@ ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
   if (( ${+commands[curl]} )); then
     curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
-        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh  
+        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
   else
     mkdir -p ${ZIM_HOME} && wget -nv -O ${ZIM_HOME}/zimfw.zsh \
-        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh  
+        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
   fi
 fi
 # Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
@@ -34,6 +34,12 @@ source ${ZIM_HOME}/init.zsh
 # -----------------
 # Zsh configuration
 # -----------------
+
+#
+# Use Emacs Mode
+#
+
+set -o emacs
 
 #
 # Environment (based on the zim environment module)
@@ -70,12 +76,12 @@ unsetopt EXTENDED_GLOB
 # CLI initialization
 #
 
-# [mise](https://mise.jdx.dev/)  
+# [mise](https://mise.jdx.dev/)
 if (( ${+commands[mise]} )); then
   eval "$(mise activate zsh)"
 fi
 
-# [zoxide](https://github.com/ajeetdsouza/zoxide)  
+# [zoxide](https://github.com/ajeetdsouza/zoxide)
 if (( ${+commands[zoxide]} )) ; then
   eval "$(zoxide init zsh --cmd cd)"
 fi
@@ -84,4 +90,3 @@ if (( ${+commands[nvim]} )) ; then
   export EDITOR=nvim
   alias vim=nvim
 fi
-
