@@ -97,25 +97,43 @@ function M.setup()
     -- Folding (See https://github.com/vscode-neovim/vscode-neovim/issues/58)
     vim.keymap.set('n', 'zM', function()
         vscode.action('editor.foldAll')
-    end, { desc = "Fold All" })
+    end, { desc = "[Folding] Fold All" })
     vim.keymap.set('n', 'zR', function()
         vscode.action('editor.unfoldAll')
-    end, { desc = "Unfold All" })
+    end, { desc = "[Folding] Unfold All" })
     vim.keymap.set('n', 'zc', function()
         vscode.action('editor.fold')
-    end, { desc = "Fold" })
+    end, { desc = "[Folding] Fold" })
     vim.keymap.set('n', 'zC', function()
         vscode.action('editor.foldRecursively')
-    end, { desc = "Fold Recursively" })
+    end, { desc = "[Folding] Fold Recursively" })
     vim.keymap.set('n', 'zo', function()
         vscode.action('editor.unfold')
-    end, { desc = "Unfold" })
+    end, { desc = "[Folding] Unfold" })
     vim.keymap.set('n', 'zO', function()
         vscode.action('editor.unfoldRecursively')
-    end, { desc = "Unfold Recursively" })
+    end, { desc = "[Folding] Unfold Recursively" })
     vim.keymap.set('n', 'za', function()
         vscode.action('editor.toggleFold')
-    end, { desc = "Toggle Fold" })
+    end, { desc = "[Folding] Toggle Fold" })
+    vim.keymap.set('n', '<leader>z', function()
+        vscode.action('editor.toggleFold')
+    end, { desc = "[Folding] Toggle Fold" })
+
+    -- Better movement over folding sections
+    -- https://github.com/vscode-neovim/vscode-neovim/blob/3a5ecb26086ca9f4add610e8d6844e1762e9d122/runtime/vscode/overrides/vscode-motion.vim
+    local function vscode_cursor_move(direction)
+        return function()
+            vim.fn['VSCodeNotify']('cursorMove', {
+                to = direction,
+                by = 'wrappedLine',
+                value = vim.v.count1
+            })
+        end
+    end
+
+    vim.keymap.set('n', 'k', vscode_cursor_move('up'), { silent = true })
+    vim.keymap.set('n', 'j', vscode_cursor_move('down'), { silent = true })
 end
 
 return M

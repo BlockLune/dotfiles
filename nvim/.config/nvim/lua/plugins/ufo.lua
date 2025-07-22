@@ -76,8 +76,8 @@ return {
             set_buf_foldlevel(foldlevel)
         end
 
-        vim.keymap.set("n", "zM", function() set_buf_foldlevel(0) end, { desc = "[UFO] Close all folds" })
-        vim.keymap.set("n", "zR", require("ufo").openAllFolds, { desc = "[UFO] Open all folds" })
+        vim.keymap.set("n", "zM", function() set_buf_foldlevel(0) end, { desc = "[Folding] Close all folds" })
+        vim.keymap.set("n", "zR", require("ufo").openAllFolds, { desc = "[Folding] Open all folds" })
 
         vim.keymap.set("n", "zm", function()
             local count = vim.v.count
@@ -85,13 +85,13 @@ return {
                 count = 1
             end
             change_buf_foldlevel_by(-count)
-        end, { desc = "[UFO] Fold More" })
+        end, { desc = "[Folding] Fold More" })
         vim.keymap.set("n", "zr", function()
             local count = vim.v.count
             if count == 0 then
                 count = 1
             end
             change_buf_foldlevel_by(count)
-        end, { desc = "[UFO] Fold Less" })
+        end, { desc = "[Folding] Fold Less" })
     end,
 }
