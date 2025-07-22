@@ -16,6 +16,9 @@ function M.setup()
     vim.keymap.set("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Selection Down" })
     vim.keymap.set("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv",
         { desc = "Move Selection Up" })
+
+    -- Highlight
+    vim.keymap.set("n", "<leader><cr>", ":nohl<cr>", { desc = "Stop the highlighting" })
 end
 
 return M

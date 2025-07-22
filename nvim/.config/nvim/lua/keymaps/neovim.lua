@@ -14,20 +14,20 @@ function M.setup()
     vim.keymap.set("n", "<leader>z", "za", { desc = "[Folding] Toggle Folding" })
 
     -- Navigate Windows
-    vim.keymap.set("n", "<c-h>", "<c-w>h", { desc = "Navigate to Left Window" })
-    vim.keymap.set("n", "<c-j>", "<c-w>j", { desc = "Navigate to Window Below" })
-    vim.keymap.set("n", "<c-k>", "<c-w>k", { desc = "Navigate to Window Above" })
-    vim.keymap.set("n", "<c-l>", "<c-w>l", { desc = "Navigate to Right Window" })
+    vim.keymap.set("n", "<c-h>", "<c-w>h", { desc = "[Window] Navigate to Left Window" })
+    vim.keymap.set("n", "<c-j>", "<c-w>j", { desc = "[Window] Navigate to Window Below" })
+    vim.keymap.set("n", "<c-k>", "<c-w>k", { desc = "[Window] Navigate to Window Above" })
+    vim.keymap.set("n", "<c-l>", "<c-w>l", { desc = "[Window] Navigate to Right Window" })
 
     -- Window Splits
-    vim.keymap.set("n", "<leader>|", ":vsp<cr>", { desc = "Split Window Vertically" })
-    vim.keymap.set("n", "<leader>-", ":sp<cr>", { desc = "Split Window Horizontally" })
+    vim.keymap.set("n", "<leader>|", ":vsp<cr>", { desc = "[Window] Split Window Vertically" })
+    vim.keymap.set("n", "<leader>-", ":sp<cr>", { desc = "[Window] Split Window Horizontally" })
 
     -- Resize Windows
-    vim.keymap.set("n", "<leader><up>", ":resize +2<cr>", { desc = "Increase Window Height" })
-    vim.keymap.set("n", "<leader><down>", ":resize -2<cr>", { desc = "Decrease Window Height" })
-    vim.keymap.set("n", "<leader><left>", ":vertical resize -2<cr>", { desc = "Decrease Window Width" })
-    vim.keymap.set("n", "<leader><right>", ":vertical resize +2<cr>", { desc = "Increase Window Width" })
+    vim.keymap.set("n", "<leader><up>", ":resize +2<cr>", { desc = "[Window] Increase Window Height" })
+    vim.keymap.set("n", "<leader><down>", ":resize -2<cr>", { desc = "[Window] Decrease Window Height" })
+    vim.keymap.set("n", "<leader><left>", ":vertical resize -2<cr>", { desc = "[Window] Decrease Window Width" })
+    vim.keymap.set("n", "<leader><right>", ":vertical resize +2<cr>", { desc = "[Window] Increase Window Width" })
 
     -- Buffer Navigation
     vim.keymap.set("n", "H", ":bprev<cr>", { desc = "Go to Previous Buffer" })
@@ -35,7 +35,7 @@ function M.setup()
 
     -- LSP Keymaps
     vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show Hover Documentation" })
-    vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename Symbol" })
+    vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "[Code] Rename Symbol" })
     vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show Line Diagnostics" })
 
     -- Diagnostic Navigation
