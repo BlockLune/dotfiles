@@ -119,21 +119,6 @@ function M.setup()
     vim.keymap.set('n', '<leader>z', function()
         vscode.action('editor.toggleFold')
     end, { desc = "[Folding] Toggle Fold" })
-
-    -- Better movement over folding sections
-    -- https://github.com/vscode-neovim/vscode-neovim/blob/3a5ecb26086ca9f4add610e8d6844e1762e9d122/runtime/vscode/overrides/vscode-motion.vim
-    local function vscode_cursor_move(direction)
-        return function()
-            vim.fn['VSCodeNotify']('cursorMove', {
-                to = direction,
-                by = 'wrappedLine',
-                value = vim.v.count1
-            })
-        end
-    end
-
-    vim.keymap.set('n', 'k', vscode_cursor_move('up'), { silent = true })
-    vim.keymap.set('n', 'j', vscode_cursor_move('down'), { silent = true })
 end
 
 return M
