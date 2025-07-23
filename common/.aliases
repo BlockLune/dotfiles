@@ -43,11 +43,13 @@ alias fgrep="grep -F --color=auto"
 alias rg="rg --smart-case --color=auto"
 
 # neovide
-alias nv="neovide"
+alias nv="nohup neovide &"
 
 # windsurf
 alias ws="windsurf"
 
+# cursor
+alias cs="cursor"
+
 # git
 [[ -f ~/.gitaliases ]] && source ~/.gitaliases
-
