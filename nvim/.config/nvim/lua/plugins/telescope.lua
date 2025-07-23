@@ -12,5 +12,9 @@ return {
         { "<leader>sl",      "<cmd>Telescope loclist<cr>",     desc = "[Show] Loclist" },
         { "<leader>sm",      "<cmd>Telescope marks<cr>",       desc = "[Show] Marks" },
         { "<leader>sq",      "<cmd>Telescope quickfix<cr>",    desc = "[Show] Quickfix List" },
-    }
+    },
+    config = function(_, opts)
+        require("telescope").setup(opts)
+        require("telescope").load_extension("git_signs")
+    end
 }

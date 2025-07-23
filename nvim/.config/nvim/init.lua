@@ -49,6 +49,7 @@ require("lazy").setup({
     { import = "plugins.scrollbar",                cond = (function() return not vim.g.vscode end) },
     { import = "plugins.snacks",                   cond = (function() return not vim.g.vscode end) },
     { import = "plugins.surround",                 cond = true },
+    { import = "plugins.telescope-gitsigns",       cond = (function() return not vim.g.vscode end) },
     { import = "plugins.telescope",                cond = (function() return not vim.g.vscode end) },
     { import = "plugins.tiny-code-action",         cond = (function() return not vim.g.vscode end) },
     { import = "plugins.todo-comments",            cond = (function() return not vim.g.vscode end) },

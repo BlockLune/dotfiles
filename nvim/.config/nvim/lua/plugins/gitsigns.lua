@@ -31,19 +31,28 @@ return {
             end,
             desc = "[Git] Next Change",
         },
+        { "<leader>ghs", ":Gitsigns stage_hunk<CR>", mode = { "n", "v" }, desc = "[Git] Stage Hunk" },
+        { "<leader>ghr", ":Gitsigns reset_hunk<CR>", mode = { "n", "v" }, desc = "[Git] Reset Hunk" },
         {
-            "<leader>gp",
+            "<leader>ghS",
+            function()
+                require("gitsigns").stage_buffer()
+            end,
+            desc = "[Git] Stage Buffer",
+        },
+        {
+            "<leader>ghR",
+            function()
+                require("gitsigns").reset_buffer()
+            end,
+            desc = "[Git] Reset Buffer",
+        },
+        {
+            "<leader>ghp",
             function()
                 require("gitsigns").preview_hunk_inline()
             end,
-            desc = "[Git] Preview Change"
+            desc = "[Git] Preview Hunk Inline",
         },
-        {
-            "<leader>gq",
-            function()
-                require("gitsigns").setqflist()
-            end,
-            desc = "[Git] Show Changes in QuickFix List",
-        }
     }
 }
