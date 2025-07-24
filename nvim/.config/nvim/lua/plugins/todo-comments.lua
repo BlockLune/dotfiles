@@ -18,10 +18,7 @@ return {
             end,
             desc = "Next Todo Comment"
         },
-        {
-            "<leader>st",
-            ":TodoTelescope<cr>",
-            desc = "[Show] TODOs"
-        },
+
+        -- And more in `snacks.lua` ...
     },
 }
