@@ -95,6 +95,9 @@ function M.setup()
     end, { desc = "Show Source Control Panel" })
 
     -- Folding (See https://github.com/vscode-neovim/vscode-neovim/issues/58)
+    -- vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = false, silent = true })
+    -- vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = false, silent = true })
+
     vim.keymap.set('n', 'zM', function()
         vscode.action('editor.foldAll')
     end, { desc = "[Folding] Fold All" })
