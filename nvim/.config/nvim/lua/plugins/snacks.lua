@@ -29,7 +29,10 @@ return {
         lazygit = { enabled = true },
         notifier = { enabled = true },
         notify = { enabled = true },
-        picker = { enabled = true },
+        picker = {
+            enabled = true,
+            focus = "list",
+        },
         terminal = { enabled = true },
     },
     keys = {
