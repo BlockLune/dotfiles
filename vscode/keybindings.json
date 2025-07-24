@@ -40,6 +40,21 @@
     "when": "isMac && terminalFocus"
   },
   {
+    "command": "workbench.action.terminal.focusAtIndex1",
+    "key": "alt+1",
+    "when": "isMac && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex2",
+    "key": "alt+2",
+    "when": "isMac && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex3",
+    "key": "alt+3",
+    "when": "isMac && terminalFocus"
+  },
+  {
     "command": "workbench.action.terminal.new",
     "key": "ctrl+t",
     "when": "(isWindows || isLinux) && terminalFocus"
