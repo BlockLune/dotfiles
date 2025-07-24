@@ -33,6 +33,9 @@ return {
             enabled = true,
             focus = "list",
         },
+        quickfile = {
+            enabled = true,
+        },
         terminal = { enabled = true },
     },
     keys = {
