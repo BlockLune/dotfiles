@@ -1,6 +1,7 @@
 return {
     "saghen/blink.cmp",
     dependencies = { 'neovim/nvim-lspconfig' },
+    event = "InsertEnter",
     version = '1.*',
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config

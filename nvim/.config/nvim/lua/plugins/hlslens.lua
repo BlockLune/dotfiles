@@ -1,5 +1,6 @@
 return {
     "kevinhwang91/nvim-hlslens",
+    keys = { "n", "N", "*", "#", "g*", "g#" },
     opts = {},
     config = function(_, opts)
         require("scrollbar.handlers.search").setup(opts)
