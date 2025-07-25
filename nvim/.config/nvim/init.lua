@@ -46,6 +46,7 @@ require("lazy").setup({
     { import = "plugins.lightbulb",                cond = (function() return not vim.g.vscode end) },
     { import = "plugins.lspconfig",                cond = (function() return not vim.g.vscode end) },
     { import = "plugins.lualine",                  cond = (function() return not vim.g.vscode end) },
+    { import = "plugins.mini-ai",                  cond = true },
     { import = "plugins.repeat",                   cond = true },
     { import = "plugins.scrollbar",                cond = (function() return not vim.g.vscode end) },
     { import = "plugins.snacks",                   cond = (function() return not vim.g.vscode end) },
