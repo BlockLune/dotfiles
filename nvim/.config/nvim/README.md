@@ -2,42 +2,44 @@
 
 ```
 .
-├── init.lua                               -- Entry file, where the plugin manager lazy.nvim loaded
-├── lazy-lock.json                         -- Lockfile of lazy.nvim
+├── init.lua                               -- Entry file
+├── lazy-lock.json                         -- Lockfile for lazy.nvim
 ├── lua
 │   ├── keymaps                            -- Keymaps
 │   │   ├── common.lua                     -- Common keymaps
-│   │   ├── neovim.lua                     -- Only loaded in NeoVim
-│   │   └── vscode.lua                     -- Only loaded in VSCode (with vscode-neovim)
-│   ├── options.lua                        -- NeoVim Options
-│   └── plugins                            -- Plugins, should be imported in the entry file with `require`
-│       ├── autopairs.lua
-│       ├── blinkcmp.lua                   -- Auto completion
-│       ├── bufferline.lua                 -- Show buffers as tabs
+│   │   ├── neovim.lua                     -- Keymaps for Neovim
+│   │   └── vscode.lua                     -- Keymaps for VSCode
+│   ├── options.lua                        -- Neovim options
+│   └── plugins                            -- Plugin configurations
+│       ├── blinkcmp.lua                   -- Autocomplete
+│       ├── bufferline.lua                 -- Buffer line
 │       ├── catppuccin.lua                 -- Theme
 │       ├── conform.lua                    -- Formatter
-│       ├── gitsigns.lua                   -- Git related
-│       ├── hardtime.lua
-│       ├── hlslens.lua
-│       ├── lazydev.lua
-│       ├── lightbulb.lua
-│       ├── lspconfig.lua                  -- LSP (with Mason)
-│       ├── repeat.lua
-│       ├── scrollbar.lua
-│       ├── snacks.lua                     -- Tools and functions, QoL
-│       ├── surround.lua
-│       ├── telescope.lua
-│       ├── tiny-code-action.lua
-│       ├── todo-comments.lua
-│       ├── tree.lua                       -- File explorer
-│       ├── treesitter.lua                 -- Syntax highlight
-│       ├── trim.lua
-│       ├── ts-context-commentstring.lua
-│       ├── ufo.lua                        -- Folding
-│       ├── undotree.lua
-│       ├── wakatime.lua
-│       ├── whichkey.lua
-│       └── yanky.lua
+│       ├── gitsigns.lua                   -- Git signs
+│       ├── hardtime.lua                   -- Better habit
+│       ├── hlslens.lua                    -- Highlight lens
+│       ├── lazydev.lua                    -- Lazydev
+│       ├── lightbulb.lua                  -- Lightbulb
+│       ├── lspconfig.lua                  -- LSP configuration
+│       ├── lualine.lua                    -- Status line
+│       ├── mini-ai.lua                    -- Text objects
+│       ├── mini-comment.lua               -- Commenting
+│       ├── mini-pairs.lua                 -- Autopairs
+│       ├── repeat.lua                     -- Repeat
+│       ├── scrollbar.lua                  -- Scrollbar
+│       ├── snacks.lua                     -- Snacks
+│       ├── surround.lua                   -- Surround
+│       ├── tiny-code-action.lua           -- Code action
+│       ├── todo-comments.lua              -- Todo comments
+│       ├── treesitter.lua                 -- Treesitter
+│       ├── trim.lua                       -- Trim whitespace
+│       ├── ts-autotag.lua                 -- Autotag for TSX/HTML
+│       ├── ts-context-commentstring.lua   -- Context commentstring for TS
+│       ├── ufo.lua                        -- UFO
+│       ├── undotree.lua                   -- Undotree
+│       ├── wakatime.lua                   -- Wakatime
+│       ├── whichkey.lua                   -- Whichkey
+│       └── yanky.lua                      -- Yanky
 └── README.md
 ```
 
