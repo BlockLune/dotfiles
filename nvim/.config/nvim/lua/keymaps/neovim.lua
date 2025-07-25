@@ -11,7 +11,7 @@ function M.setup()
     vim.keymap.set("n", "<leader>qq", ":qa<cr>", { desc = "Quit All Windows" })
 
     -- Folding
-    vim.keymap.set("n", "<leader>z", "za", { desc = "[Folding] Toggle Folding" })
+    vim.keymap.set("n", "<leader>z", "za", { desc = "Toggle Folding" })
 
     -- Navigate Windows
     vim.keymap.set("n", "<c-h>", "<c-w>h", { desc = "[Window] Navigate to Left Window" })

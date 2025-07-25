@@ -31,7 +31,6 @@ return {
         notify = { enabled = true },
         picker = {
             enabled = true,
-            focus = "list",
         },
         quickfile = {
             enabled = true,
@@ -41,11 +40,11 @@ return {
     keys = {
         -- Top Pickers & Explorer
         { "<leader><space>", function() Snacks.picker.smart() end,           desc = "Smart Find Files" },
-        { "<leader>,",       function() Snacks.picker.buffers() end,         desc = "Buffers" },
+        { "<leader>,",       function() Snacks.picker.buffers() end,         desc = "Open Buffer List" },
         { "<leader>/",       function() Snacks.picker.grep() end,            desc = "Grep" },
-        { "<leader>:",       function() Snacks.picker.command_history() end, desc = "Command History" },
-        { "<leader>n",       function() Snacks.picker.notifications() end,   desc = "Notification History" },
-        { "<leader>e",       function() Snacks.explorer() end,               desc = "File Explorer" },
+        { "<leader>:",       function() Snacks.picker.command_history() end, desc = "Open Command History" },
+        { "<leader>n",       function() Snacks.picker.notifications() end,   desc = "Open Notification History" },
+        { "<leader>e",       function() Snacks.explorer() end,               desc = "Open File Explorer" },
         {
             "<leader>p",
             function()
