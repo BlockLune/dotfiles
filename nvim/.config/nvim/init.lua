@@ -56,6 +56,7 @@ require("lazy").setup({
     { import = "plugins.todo-comments",            cond = (function() return not vim.g.vscode end) },
     { import = "plugins.treesitter",               cond = true },
     { import = "plugins.trim",                     cond = true },
+    { import = "plugins.ts-autotag",               cond = (function() return not vim.g.vscode end) },
     { import = "plugins.ts-context-commentstring", cond = true },
     { import = "plugins.ufo",                      cond = (function() return not vim.g.vscode end) },
     { import = "plugins.undotree",                 cond = (function() return not vim.g.vscode end) },
