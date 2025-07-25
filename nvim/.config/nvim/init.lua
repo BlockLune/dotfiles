@@ -34,7 +34,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { import = "plugins.autopairs",                cond = true },
     { import = "plugins.blinkcmp",                 cond = (function() return not vim.g.vscode end) },
     { import = "plugins.bufferline",               cond = (function() return not vim.g.vscode end) },
     { import = "plugins.catppuccin",               cond = (function() return not vim.g.vscode end) },
@@ -47,6 +46,7 @@ require("lazy").setup({
     { import = "plugins.lspconfig",                cond = (function() return not vim.g.vscode end) },
     { import = "plugins.lualine",                  cond = (function() return not vim.g.vscode end) },
     { import = "plugins.mini-ai",                  cond = true },
+    { import = "plugins.mini-pairs",               cond = true },
     { import = "plugins.repeat",                   cond = true },
     { import = "plugins.scrollbar",                cond = (function() return not vim.g.vscode end) },
     { import = "plugins.snacks",                   cond = (function() return not vim.g.vscode end) },
