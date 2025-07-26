@@ -1,5 +1,6 @@
 return {
   "gbprod/yanky.nvim",
+  dependencies = { "folke/snacks.nvim" },
   opts = {},
   keys = {
     {
@@ -91,6 +92,14 @@ return {
       "=P",
       "<Plug>(YankyPutBeforeFilter)",
       desc = "Put Before Applying a Filter",
+    },
+    {
+      "<leader>p",
+      function()
+        Snacks.picker.yanky()
+      end,
+      mode = { "n", "x" },
+      desc = "Open Yank History",
     },
   },
 }

@@ -87,14 +87,6 @@ return {
       end,
       desc = "Open File Explorer",
     },
-    {
-      "<leader>p",
-      function()
-        require("telescope").extensions.yank_history.yank_history({})
-      end,
-      mode = { "n", "x" },
-      desc = "Open Yank History",
-    },
 
     -- File
     {
