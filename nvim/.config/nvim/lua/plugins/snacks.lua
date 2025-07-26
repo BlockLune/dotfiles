@@ -21,10 +21,7 @@ return {
       animate = { enabled = false },
       chunk = { enabled = true },
       indent = { only_scope = true },
-      scope = {
-        enabled = true,
-        underline = true,
-      },
+      scope = { enabled = true },
     },
     lazygit = { enabled = true },
     notifier = { enabled = true },
