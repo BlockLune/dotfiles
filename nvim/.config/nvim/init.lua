@@ -117,12 +117,6 @@ require("lazy").setup({
   },
   { import = "plugins.surround", cond = true },
   {
-    import = "plugins.tiny-code-action",
-    cond = function()
-      return not vim.g.vscode
-    end,
-  },
-  {
     import = "plugins.todo-comments",
     cond = function()
       return not vim.g.vscode

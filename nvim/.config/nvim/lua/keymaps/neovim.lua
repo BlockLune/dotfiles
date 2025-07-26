@@ -98,6 +98,12 @@ function M.setup()
   )
   vim.keymap.set(
     "n",
+    "<leader>ca",
+    vim.lsp.buf.code_action,
+    { desc = "[Code] Action" }
+  )
+  vim.keymap.set(
+    "n",
     "<leader>d",
     vim.diagnostic.open_float,
     { desc = "Show Line Diagnostics" }
