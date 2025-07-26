@@ -7,13 +7,32 @@ return {
       "mason-org/mason-lspconfig.nvim",
       opts = {
         ensure_installed = {
+          -- Python
+          -- "black",
+          -- "isort",
+          -- "pylsp",
+
+          -- Prettier
+          "prettier",
+          "prettierd",
+
+          -- Web
           "cssls", -- CSS
           "html", -- HTML
-          "lua_ls", -- Lua
-          -- "pylsp",         -- Python
-          "ts_ls", -- TypeScript
-          "vimls", -- Vim
-          "rust_analyzer", -- Rust
+          "ts_ls", -- TypeScript & JavaScript
+
+          -- Markdown
+          "markdownlint",
+
+          -- Lua
+          "lua_ls",
+          "stylua",
+
+          -- Rust
+          "rust_analyzer",
+
+          -- Vim
+          "vimls",
         },
         automatic_enable = {
           exclude = {},
