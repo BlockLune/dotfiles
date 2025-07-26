@@ -131,6 +131,12 @@ require("lazy").setup({
   { import = "plugins.treesitter", cond = true },
   { import = "plugins.trim", cond = true },
   {
+    import = "plugins.trouble",
+    cond = function()
+      return not vim.g.vscode
+    end,
+  },
+  {
     import = "plugins.ts-autotag",
     cond = function()
       return not vim.g.vscode
