@@ -2,31 +2,40 @@ return {
   "neovim/nvim-lspconfig",
   event = "VeryLazy",
   dependencies = {
-    { "mason-org/mason.nvim", opts = {} },
     {
-      "mason-org/mason-lspconfig.nvim",
+      "mason-org/mason.nvim",
       opts = {
         ensure_installed = {
           -- Python
           -- "black",
           -- "isort",
-          -- "pylsp",
 
           -- Prettier
           "prettier",
           "prettierd",
+
+          -- Markdown
+          "markdownlint",
+
+          -- Lua
+          "stylua",
+        },
+      },
+    },
+    {
+      "mason-org/mason-lspconfig.nvim",
+      opts = {
+        ensure_installed = {
+          -- Python
+          -- "pylsp",
 
           -- Web
           "cssls", -- CSS
           "html", -- HTML
           "ts_ls", -- TypeScript & JavaScript
 
-          -- Markdown
-          "markdownlint",
-
           -- Lua
           "lua_ls",
-          "stylua",
 
           -- Rust
           "rust_analyzer",
