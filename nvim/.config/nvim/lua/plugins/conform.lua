@@ -8,7 +8,6 @@ return {
             function()
                 require("conform").format({ async = true })
             end,
-            mode = "",
             desc = "[Code] Format",
         },
     },
@@ -19,6 +18,7 @@ return {
             lua = { "stylua" },
             python = { "isort", "black" },
             javascript = { "prettierd", "prettier", stop_after_first = true },
+            rust = { "rust_analyzer" },
         },
         default_format_opts = {
             lsp_format = "fallback",
