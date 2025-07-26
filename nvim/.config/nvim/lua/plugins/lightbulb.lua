@@ -1,4 +1,4 @@
 return {
-    "kosayoda/nvim-lightbulb",
-    event = "LspAttach",
+  "kosayoda/nvim-lightbulb",
+  event = "LspAttach",
 }

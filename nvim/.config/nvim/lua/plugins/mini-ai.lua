@@ -1,4 +1,5 @@
 return {
-    "echasnovski/mini.ai",
-    event = "VeryLazy",
+  "echasnovski/mini.ai",
+  event = "VeryLazy",
+  opts = {},
 }
