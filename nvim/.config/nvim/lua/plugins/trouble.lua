@@ -1,7 +1,13 @@
 return {
   "folke/trouble.nvim",
-  opts = {},
-  cmd = "Trouble",
+  event = "VeryLazy",
+  opts = {
+    modes = {
+      symbols = {
+        focus = false,
+      },
+    },
+  },
   keys = {
     {
       "<leader>D",
@@ -19,4 +25,17 @@ return {
       desc = "[Code] LSP Definitions / references / ...",
     },
   },
+  config = function(_, opts)
+    require("trouble").setup(opts)
+
+    local symbols_opened = false
+    vim.api.nvim_create_autocmd("LspAttach", {
+      callback = function()
+        if not symbols_opened then
+          require("trouble").open("symbols")
+          symbols_opened = true
+        end
+      end,
+    })
+  end,
 }
