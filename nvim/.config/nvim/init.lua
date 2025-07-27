@@ -102,6 +102,12 @@ require("lazy").setup({
   { import = "plugins.mini-ai", cond = true },
   { import = "plugins.mini-comment", cond = true },
   { import = "plugins.mini-pairs", cond = true },
+  {
+    import = "plugins.outline",
+    cond = function()
+      return not vim.g.vscode
+    end,
+  },
   { import = "plugins.repeat", cond = true },
   {
     import = "plugins.scrollbar",
