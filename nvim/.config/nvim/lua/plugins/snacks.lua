@@ -39,6 +39,7 @@ return {
       enabled = true,
     },
     terminal = { enabled = true },
+    zen = { enabled = true },
   },
   keys = {
     -- Top Pickers & Explorer
@@ -376,6 +377,13 @@ return {
         Snacks.dim()
       end,
       desc = "[UI] Toggle Dimming",
+    },
+    {
+      "<leader>uz",
+      function()
+        Snacks.zen()
+      end,
+      desc = "[UI] Toggle Zen Mode",
     },
 
     -- Terminal
