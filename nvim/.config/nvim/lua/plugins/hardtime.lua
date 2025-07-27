@@ -1,7 +1,7 @@
 return {
   "m4xshen/hardtime.nvim",
   lazy = false,
-  dpendencies = { "MunifTanjim/nui.nvim" },
+  dependencies = { "MunifTanjim/nui.nvim" },
   opts = {
     -- This overrides the default, so I copied the default and added myself.
     disabled_filetypes = {
