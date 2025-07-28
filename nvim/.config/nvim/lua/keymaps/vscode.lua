@@ -31,6 +31,9 @@ function M.setup()
   map("<leader>bd", "workbench.action.closeActiveEditor", "Close Current Editor")
   map("<leader>bo", "workbench.action.closeOtherEditors", "Close Other Editors")
 
+  -- Symbols
+  map("<leader>cs", "outline.toggleVisibility", "Toggle Outline")
+
   -- LSP Actions
   map("<leader>cr", "editor.action.rename", "Rename Symbol")
   map("<leader>d", "editor.action.showHover", "Show Hover Information")
@@ -61,7 +64,6 @@ function M.setup()
   -- Git Integration
   map("[c", "workbench.action.editor.previousChange", "Go to Previous Git Change")
   map("]c", "workbench.action.editor.nextChange", "Go to Next Git Change")
-  map("<leader>gq", "workbench.view.scm", "Show Source Control Panel")
 
   -- Folding (See https://github.com/vscode-neovim/vscode-neovim/issues/58)
   -- vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = false, silent = true })
