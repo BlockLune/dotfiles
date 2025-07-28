@@ -13,7 +13,6 @@ return {
     },
     explorer = {
       enabled = true,
-      focus = "list",
     },
     git = { enabled = true },
     image = { enabled = true },
@@ -28,10 +27,20 @@ return {
     notify = { enabled = true },
     picker = {
       enabled = true,
+      focus = "list",
       sources = {
         explorer = {
           hidden = true,
           ignored = true,
+        },
+        smart = {
+          focus = "input",
+        },
+        grep = {
+          focus = "input",
+        },
+        files = {
+          focus = "input",
         },
       },
     },
