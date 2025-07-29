@@ -30,6 +30,8 @@ fi
 # Initialize modules.
 source ${ZIM_HOME}/init.zsh
 
+# [zsh-wakatime](https://github.com/wbingli/zsh-wakatime)
+export ZSH_WAKATIME_PROJECT_DETECTION=true
 
 # -----------------
 # Zsh configuration
@@ -86,6 +88,7 @@ if (( ${+commands[zoxide]} )) ; then
   eval "$(zoxide init zsh --cmd cd)"
 fi
 
+# neovim
 if (( ${+commands[nvim]} )) ; then
   export EDITOR=nvim
   alias vim=nvim
