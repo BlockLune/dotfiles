@@ -88,6 +88,7 @@
       // Diagnostics
       "space s d": "diagnostics::Deploy",
       "space d": "editor::Hover",
+      "space shift-d": "diagnostics::Deploy",
       "[ d": "editor::GoToPreviousDiagnostic",
       "] d": "editor::GoToDiagnostic",
       "[ e": "editor::GoToPreviousDiagnostic",
