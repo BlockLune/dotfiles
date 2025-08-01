@@ -1,0 +1,24 @@
+//
+// BlockLune's Zed Settings
+//
+{
+  "outline_panel": {
+    "dock": "right"
+  },
+  "buffer_font_size": 14,
+  "indent_guides": {
+    "enabled": true,
+    "active_line_width": 2,
+    "background_coloring": "indent_aware"
+  },
+  "relative_line_numbers": true,
+  "tab_size": 2,
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Macchiato"
+  },
+  "ui_font_size": 14,
+  "vim_mode": true,
+  "wrap_guides": [80, 100, 120]
+}
