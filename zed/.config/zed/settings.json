@@ -4,6 +4,7 @@
 {
   "buffer_font_size": 14,
   "buffer_font_family": "Maple Mono NF CN",
+  "disable_ai": true,
   "icon_theme": "Material Icon Theme",
   "indent_guides": {
     "enabled": true,
