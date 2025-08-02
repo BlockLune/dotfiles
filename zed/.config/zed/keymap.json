@@ -1,6 +1,6 @@
-//
-// BlockLune's Zed Keymap
-//
+// ----------------------------------------------------
+// BlockLune's Zed Keymap (Align with my NeoVim keymap)
+// ----------------------------------------------------
 [
   {
     "context": "Workspace",
@@ -8,7 +8,8 @@
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-j": "workspace::ActivatePaneDown",
       "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-l": "workspace::ActivatePaneRight"
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-/": "terminal_panel::ToggleFocus"
     }
   },
   {
@@ -65,9 +66,6 @@
       "space f g": "pane::DeploySearch",
       "space e": "project_panel::ToggleFocus",
 
-      // Terminal
-      "ctrl-/": "terminal_panel::ToggleFocus",
-
       // Hover
       "shift-k": "editor::Hover",
 
@@ -106,9 +104,10 @@
       "ctrl-g": "git_panel::ToggleFocus",
       "[ c": "editor::GoToPreviousHunk",
       "] c": "editor::GoToHunk",
+      "space g B": "git::Blame",
       "space g h p": "editor::ToggleSelectedDiffHunks",
-      "space g h s": "git::StageAndNext", // Why next?
-      "space g h r": "git::UnstageAndNext" // Why next?
+      "space g h s": "git::ToggleStaged",
+      "space g h r": "git::ToggleStaged"
     }
   }
 ]
