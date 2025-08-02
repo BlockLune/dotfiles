@@ -84,12 +84,11 @@ function M.setup()
   vim.keymap.set("n", "L", ":bnext<cr>", { desc = "Go to Next Buffer" })
 
   -- LSP Keymaps
-  vim.keymap.set(
-    "n",
-    "K",
-    vim.lsp.buf.hover,
-    { desc = "Show Hover Documentation" }
-  )
+  vim.keymap.set("n", "K", function()
+    vim.lsp.buf.hover({
+      border = "rounded",
+    })
+  end, { desc = "Show Hover Documentation" })
   vim.keymap.set(
     "n",
     "<leader>cr",
@@ -102,12 +101,11 @@ function M.setup()
     vim.lsp.buf.code_action,
     { desc = "[Code] Action" }
   )
-  vim.keymap.set(
-    "n",
-    "<leader>d",
-    vim.diagnostic.open_float,
-    { desc = "Show Line Diagnostics" }
-  )
+  vim.keymap.set("n", "<leader>d", function()
+    vim.diagnostic.open_float({
+      border = "rounded",
+    })
+  end, { desc = "Show Line Diagnostics" })
 
   -- Diagnostic Navigation
   vim.keymap.set("n", "[e", function()
