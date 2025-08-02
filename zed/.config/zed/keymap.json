@@ -79,6 +79,9 @@
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
+      // Quit
+      "space q q": "zed::Quit",
+
       // Files
       "space space": "file_finder::Toggle",
       "space f f": "file_finder::Toggle",
