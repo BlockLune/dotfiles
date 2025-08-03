@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "context7": {
+      "httpUrl": "https://mcp.context7.com/mcp"
+    },
+    "deepwiki": {
+      "httpUrl": "https://mcp.deepwiki.com/mcp"
+    },
+    "github": {
+      "httpUrl": "https://api.githubcopilot.com/mcp/"
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "time": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-time"
+      ]
+    }
+  },
+  "preferredEditor": "vim",
+  "selectedAuthType": "gemini-api-key",
+  "theme": "Default"
+}
