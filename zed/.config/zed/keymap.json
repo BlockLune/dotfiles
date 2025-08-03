@@ -22,6 +22,7 @@
     "context": "Terminal && os == macos",
     "bindings": {
       "cmd-t": "workspace::NewTerminal",
+      "cmd-w": "pane::CloseActiveItem",
       "cmd-1": ["pane::ActivateItem", 0],
       "cmd-2": ["pane::ActivateItem", 1],
       "cmd-3": ["pane::ActivateItem", 2],
@@ -30,14 +31,14 @@
       "cmd-6": ["pane::ActivateItem", 5],
       "cmd-7": ["pane::ActivateItem", 6],
       "cmd-8": ["pane::ActivateItem", 7],
-      "cmd-9": ["pane::ActivateItem", 8],
-      "cmd-0": ["pane::ActivateItem", 9]
+      "cmd-9": ["pane::ActivateItem", 8]
     }
   },
   {
     "context": "Terminal && os != macos",
     "bindings": {
       "alt-t": "workspace::NewTerminal",
+      "alt-w": "pane::CloseActiveItem",
       "alt-1": ["pane::ActivateItem", 0],
       "alt-2": ["pane::ActivateItem", 1],
       "alt-3": ["pane::ActivateItem", 2],
@@ -46,8 +47,7 @@
       "alt-6": ["pane::ActivateItem", 5],
       "alt-7": ["pane::ActivateItem", 6],
       "alt-8": ["pane::ActivateItem", 7],
-      "alt-9": ["pane::ActivateItem", 8],
-      "alt-0": ["pane::ActivateItem", 9]
+      "alt-9": ["pane::ActivateItem", 8]
     }
   },
   {
