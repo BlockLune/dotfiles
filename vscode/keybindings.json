@@ -40,23 +40,8 @@
     "when": "isMac && terminalFocus"
   },
   {
-    "command": "workbench.action.terminal.focusAtIndex1",
-    "key": "alt+1",
-    "when": "isMac && terminalFocus"
-  },
-  {
-    "command": "workbench.action.terminal.focusAtIndex2",
-    "key": "alt+2",
-    "when": "isMac && terminalFocus"
-  },
-  {
-    "command": "workbench.action.terminal.focusAtIndex3",
-    "key": "alt+3",
-    "when": "isMac && terminalFocus"
-  },
-  {
     "command": "workbench.action.terminal.new",
-    "key": "ctrl+t",
+    "key": "alt+t",
     "when": "(isWindows || isLinux) && terminalFocus"
   },
   {
@@ -66,7 +51,97 @@
   },
   {
     "command": "workbench.action.terminal.kill",
-    "key": "ctrl+w",
+    "key": "alt+w",
+    "when": "(isWindows || isLinux) && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex1",
+    "key": "cmd+1",
+    "when": "isMac && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex2",
+    "key": "cmd+2",
+    "when": "isMac && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex3",
+    "key": "cmd+3",
+    "when": "isMac && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex4",
+    "key": "cmd+4",
+    "when": "isMac && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex5",
+    "key": "cmd+5",
+    "when": "isMac && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex6",
+    "key": "cmd+6",
+    "when": "isMac && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex7",
+    "key": "cmd+7",
+    "when": "isMac && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex8",
+    "key": "cmd+8",
+    "when": "isMac && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex9",
+    "key": "cmd+9",
+    "when": "isMac && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex1",
+    "key": "alt+1",
+    "when": "(isWindows || isLinux) && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex2",
+    "key": "alt+2",
+    "when": "(isWindows || isLinux) && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex3",
+    "key": "alt+3",
+    "when": "(isWindows || isLinux) && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex4",
+    "key": "alt+4",
+    "when": "(isWindows || isLinux) && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex5",
+    "key": "alt+5",
+    "when": "(isWindows || isLinux) && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex6",
+    "key": "alt+6",
+    "when": "(isWindows || isLinux) && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex7",
+    "key": "alt+7",
+    "when": "(isWindows || isLinux) && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex8",
+    "key": "alt+8",
+    "when": "(isWindows || isLinux) && terminalFocus"
+  },
+  {
+    "command": "workbench.action.terminal.focusAtIndex9",
+    "key": "alt+9",
     "when": "(isWindows || isLinux) && terminalFocus"
   },
   // Disable some default keybindings
