@@ -71,3 +71,12 @@ alias gss="git status --short"
 # git stash
 alias gstash="git stash"
 
+# utility functions
+git-authors() {
+  if [[ $# -eq 0 ]]; then
+    echo "Usage: git-authors <file> [more files...]"
+      return 1
+  fi
+  git log --follow --format='%aN <%aE>' -- "$@" | sort -u
+}
+alias gauthors="git-authors"
