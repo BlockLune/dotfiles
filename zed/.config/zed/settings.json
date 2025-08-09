@@ -4,7 +4,7 @@
 {
   "autosave": "on_focus_change",
   "buffer_font_size": 14,
-  "buffer_font_family": "Maple Mono NF CN",
+  "buffer_font_family": "FiraCode Nerd Font",
   "disable_ai": true,
   "format_on_save": "off",
   "icon_theme": "Material Icon Theme",
