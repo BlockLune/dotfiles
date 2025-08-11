@@ -18,8 +18,8 @@ config.window_close_confirmation = "NeverPrompt"
 config.window_padding = { left = 16, right = 16, top = 16, bottom = 16 }
 
 -- Color scheme configuration
-local light_theme = "Gruvbox (Gogh)"     -- or "Github", "Catppuccin Latte", etc.
-local dark_theme = "Gruvbox Dark (Gogh)" -- or "GitHub Dark", "Catppuccin Mocha", "Dracula (Official)", etc.
+local light_theme = "Github" -- or "Gruvbox (Gogh)", "Catppuccin Latte", etc.
+local dark_theme = "GitHub Dark" -- or "Gruvbox Dark (Gogh)", "Catppuccin Mocha", "Dracula (Official)", etc.
 local static_theme = dark_theme
 
 local function scheme_for_appearance(appearance)
@@ -95,20 +95,28 @@ local function create_key_bindings()
             mods = mod_key .. "|SHIFT",
             action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
         },
-        { key = "\\",         mods = mod_key, action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-        { key = "d",          mods = mod_key, action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+        {
+            key = "\\",
+            mods = mod_key,
+            action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+        },
+        {
+            key = "d",
+            mods = mod_key,
+            action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+        },
 
         -- pane navigation
-        { key = "h",          mods = mod_key, action = wezterm.action.ActivatePaneDirection("Left") },
-        { key = "j",          mods = mod_key, action = wezterm.action.ActivatePaneDirection("Down") },
-        { key = "k",          mods = mod_key, action = wezterm.action.ActivatePaneDirection("Up") },
-        { key = "l",          mods = mod_key, action = wezterm.action.ActivatePaneDirection("Right") },
+        { key = "h", mods = mod_key, action = wezterm.action.ActivatePaneDirection("Left") },
+        { key = "j", mods = mod_key, action = wezterm.action.ActivatePaneDirection("Down") },
+        { key = "k", mods = mod_key, action = wezterm.action.ActivatePaneDirection("Up") },
+        { key = "l", mods = mod_key, action = wezterm.action.ActivatePaneDirection("Right") },
 
         -- pane size adjustment
-        { key = "LeftArrow",  mods = mod_key, action = wezterm.action.AdjustPaneSize { 'Left', 5 } },
-        { key = "DownArrow",  mods = mod_key, action = wezterm.action.AdjustPaneSize { 'Down', 5 } },
-        { key = "UpArrow",    mods = mod_key, action = wezterm.action.AdjustPaneSize { 'Up', 5 } },
-        { key = "RightArrow", mods = mod_key, action = wezterm.action.AdjustPaneSize { 'Right', 5 } },
+        { key = "LeftArrow", mods = mod_key, action = wezterm.action.AdjustPaneSize({ "Left", 5 }) },
+        { key = "DownArrow", mods = mod_key, action = wezterm.action.AdjustPaneSize({ "Down", 5 }) },
+        { key = "UpArrow", mods = mod_key, action = wezterm.action.AdjustPaneSize({ "Up", 5 }) },
+        { key = "RightArrow", mods = mod_key, action = wezterm.action.AdjustPaneSize({ "Right", 5 }) },
     }
 
     -- macOS specific keys
@@ -127,7 +135,7 @@ if is_windows then
     config.default_prog = { "C:\\Program Files\\PowerShell\\7\\pwsh.exe" }
 elseif is_macos then
     config.macos_window_background_blur = 20
-    config.window_background_opacity = 0.75
+    config.window_background_opacity = 0.85
 elseif is_linux then
     config.window_background_opacity = 0.97
 end
