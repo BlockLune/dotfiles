@@ -79,6 +79,9 @@
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
+      // Nohlsearch
+      "space enter": ["workspace::SendKeystrokes", ": n o h l enter"],
+
       // Quit
       "space q q": "zed::Quit",
 
