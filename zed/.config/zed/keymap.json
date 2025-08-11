@@ -77,6 +77,12 @@
     }
   },
   {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "shift-s": "vim::PushAddSurrounds"
+    }
+  },
+  {
     "context": "Editor && vim_mode == normal",
     "bindings": {
       // Nohlsearch
