@@ -51,13 +51,13 @@ require("lazy").setup({
     end,
   },
   {
-    import = "plugins.catppuccin",
+    import = "plugins.conform",
     cond = function()
       return not vim.g.vscode
     end,
   },
   {
-    import = "plugins.conform",
+    import = "plugins.github-theme",
     cond = function()
       return not vim.g.vscode
     end,
