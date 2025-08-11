@@ -1,0 +1,31 @@
+# Font
+font-family = FiraCode Nerd Font
+font-size = 14
+
+# Theme with light/dark support
+theme = light:catppuccin-latte,dark:GitHub-Dark-Dimmed
+
+# Window padding
+window-padding-x = 16
+window-padding-y = 16
+
+# Background
+background-opacity = 0.9
+background-blur = 20
+
+# Keybindings
+keybind = super+-=new_split:down
+keybind = super+shift+\=new_split:right
+
+keybind = super+h=goto_split:left
+keybind = super+j=goto_split:down
+keybind = super+k=goto_split:up
+keybind = super+l=goto_split:right
+
+keybind = super+up=resize_split:up,10
+keybind = super+down=resize_split:down,10
+keybind = super+left=resize_split:left,10
+keybind = super+right=resize_split:right,10
+
+keybind = super+[=previous_tab
+keybind = super+]=next_tab
