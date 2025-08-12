@@ -99,6 +99,12 @@ require("lazy").setup({
       return not vim.g.vscode
     end,
   },
+  {
+    import = "plugins.markdown-preview",
+    cond = function()
+      return not vim.g.vscode
+    end,
+  },
   { import = "plugins.mini-ai", cond = true },
   { import = "plugins.mini-comment", cond = true },
   { import = "plugins.mini-pairs", cond = true },
