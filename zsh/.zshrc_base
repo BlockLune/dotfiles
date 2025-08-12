@@ -84,12 +84,23 @@ if (( ${+commands[mise]} )); then
 fi
 
 # [zoxide](https://github.com/ajeetdsouza/zoxide)
-if (( ${+commands[zoxide]} )) ; then
+if (( ${+commands[zoxide]} )); then
   eval "$(zoxide init zsh --cmd cd)"
 fi
 
 # neovim
-if (( ${+commands[nvim]} )) ; then
+if (( ${+commands[nvim]} )); then
   export EDITOR=nvim
   alias vim=nvim
+fi
+
+# yazi
+if (( ${+commands[yazi]} )); then
+  function y() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+    yazi "$@" --cwd-file="$tmp"
+    IFS= read -r -d '' cwd < "$tmp"
+    [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+    rm -f -- "$tmp"
+  }
 fi
