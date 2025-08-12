@@ -18,6 +18,7 @@ return {
       "httpResult",
       "lazy",
       "lspinfo",
+      "markdown",
       "mason",
       "minifiles",
       "Neogit*",
