@@ -10,9 +10,6 @@ function M.setup()
   vim.keymap.set("n", "Q", "<nop>", { desc = "Disable Ex Mode" })
   vim.keymap.set("n", "<leader>qq", ":qa<cr>", { desc = "Quit All Windows" })
 
-  -- Folding
-  vim.keymap.set("n", "<leader>z", "za", { desc = "Toggle Folding" })
-
   -- Navigate Windows
   vim.keymap.set(
     "n",

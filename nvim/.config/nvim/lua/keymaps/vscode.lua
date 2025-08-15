@@ -75,7 +75,7 @@ function M.setup()
   map("zC", "editor.foldRecursively", "[Folding] Fold Recursively")
   map("zo", "editor.unfold", "[Folding] Unfold")
   map("zO", "editor.unfoldRecursively", "[Folding] Unfold Recursively")
-  map({ "za", "<leader>z" }, "editor.toggleFold", "[Folding] Toggle Fold")
+  map("za", "editor.toggleFold", "[Folding] Toggle Fold")
 end
 
 return M
