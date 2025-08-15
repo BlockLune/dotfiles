@@ -150,6 +150,12 @@ require("lazy").setup({
   },
   { import = "plugins.ts-context-commentstring", cond = true },
   {
+    import = "plugins.typst-preview",
+    cond = function()
+      return not vim.g.vscode
+    end,
+  },
+  {
     import = "plugins.ufo",
     cond = function()
       return not vim.g.vscode

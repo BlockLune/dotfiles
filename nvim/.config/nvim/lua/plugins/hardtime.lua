@@ -36,6 +36,7 @@ return {
       "TelescopePrompt",
       "Trouble",
       "trouble",
+      "typst",
       "VoltWindow",
       "undotree",
     },
