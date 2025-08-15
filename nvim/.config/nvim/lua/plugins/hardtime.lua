@@ -1,8 +1,10 @@
 return {
   "m4xshen/hardtime.nvim",
-  lazy = false,
+  cmd = "Hardtime",
   dependencies = { "MunifTanjim/nui.nvim" },
   opts = {
+    disabled = true,
+    disable_mouse = false,
     -- This overrides the default, so I copied the default and added myself.
     disabled_filetypes = {
       "aerial",
