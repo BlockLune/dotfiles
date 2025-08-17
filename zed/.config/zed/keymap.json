@@ -41,6 +41,8 @@
     "bindings": {
       "alt-t": "workspace::NewTerminal",
       "alt-w": "pane::CloseActiveItem",
+      "alt-[": "pane::ActivatePreviousItem",
+      "alt-]": "pane::ActivateNextItem",
       "alt-1": ["pane::ActivateItem", 0],
       "alt-2": ["pane::ActivateItem", 1],
       "alt-3": ["pane::ActivateItem", 2],
@@ -87,6 +89,8 @@
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
+      "ctrl-/": "terminal_panel::ToggleFocus",
+
       // Nohlsearch
       "space enter": ["workspace::SendKeystrokes", ": n o h l enter"],
 
