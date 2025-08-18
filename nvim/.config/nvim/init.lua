@@ -122,6 +122,12 @@ require("lazy").setup({
     end,
   },
   {
+    import = "plugins.smear-cursor",
+    cond = function()
+      return not vim.g.vscode
+    end,
+  },
+  {
     import = "plugins.snacks",
     cond = function()
       return not vim.g.vscode
