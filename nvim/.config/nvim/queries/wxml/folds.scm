@@ -1,7 +1,7 @@
 [
   (element)
-  (template_element)
-  (slot_element)
   (block_element)
+  (slot_element)
+  (template_element)
   (wxs_element)
 ] @fold

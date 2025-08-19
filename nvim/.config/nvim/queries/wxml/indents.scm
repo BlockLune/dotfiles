@@ -1,22 +1,44 @@
-(start_tag ">" @end) @indent
-(self_closing_tag "/>" @end) @indent
+(element) @indent.begin
 
 (element
-  (start_tag) @start
-  (end_tag)? @end) @indent
+  (self_closing_tag)) @indent.begin
 
-(block_element
-  (block_start_tag) @start
-  (block_end_tag)? @end) @indent
+(template_element) @indent.begin
 
-(slot_element
-  (slot_start_tag) @start
-  (slot_end_tag)? @end) @indent
+(wxs_element) @indent.begin
+
+(element
+  (end_tag
+    ">" @indent.end))
+
+(element
+  (self_closing_tag
+    "/>" @indent.end))
 
 (template_element
-  (template_start_tag) @start
-  (template_end_tag)? @end) @indent
+  (template_end_tag
+    ">" @indent.end))
 
 (wxs_element
-  (wxs_start_tag) @start
-  (wxs_end_tag)? @end) @indent
+  (wxs_end_tag
+    ">" @indent.end))
+
+(element
+  (end_tag) @indent.branch)
+
+(template_element
+  (template_end_tag) @indent.branch)
+
+(wxs_element
+  (wxs_end_tag) @indent.branch)
+
+[
+  ">"
+  "/>"
+] @indent.branch
+
+(comment) @indent.ignore
+
+(import_statement) @indent.ignore
+
+(include_statement) @indent.ignore
