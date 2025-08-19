@@ -185,11 +185,5 @@ require("lazy").setup({
       return not vim.g.vscode
     end,
   },
-  {
-    import = "plugins.wxapp",
-    cond = function()
-      return not vim.g.vscode
-    end,
-  },
   { import = "plugins.yanky", cond = true },
 })
