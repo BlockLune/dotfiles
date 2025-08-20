@@ -57,6 +57,12 @@ require("lazy").setup({
     end,
   },
   {
+    import = "plugins.flash",
+    cond = function()
+      return not vim.g.vscode
+    end,
+  },
+  {
     import = "plugins.github-theme",
     cond = function()
       return not vim.g.vscode
