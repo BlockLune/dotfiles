@@ -1,10 +1,11 @@
 ; Comments
-(comment) @comment
+(comment) @comment @spell
+
+; Text
+(text) @spell
 
 ; Tag names
 (tag_name) @tag
-
-; WeChat Mini Program specific tags
 ((tag_name) @tag.builtin
   (#any-of? @tag.builtin "wxs" "template" "import" "include" "slot" "block"))
 
@@ -13,6 +14,23 @@
 (attribute_value) @string
 (quoted_attribute_value) @string
 
+; WeChat specific attributes
+((attribute_name) @keyword.directive
+  (#lua-match? @keyword.directive "^wx:"))
+((attribute_name) @keyword.conditional
+  (#any-of? @keyword.conditional "wx:if" "wx:elif" "wx:else"))
+((attribute_name) @keyword.repeat
+  (#any-of? @keyword.repeat "wx:for" "wx:for-index" "wx:for-item"))
+((attribute_name) @keyword
+  (#match? @keyword "^(bind|catch|mut-bind):?"))
+((attribute_name) @keyword
+  (#match? @keyword "^(model:|data-)"))
+((attribute
+  (attribute_name) @_attr
+  (quoted_attribute_value) @string.special.url)
+  (#any-of? @_attr "href" "src")
+  (#set! @string.special.url url @string.special.url))
+
 ; Entity references
 (entity) @string.escape
 
@@ -20,36 +38,24 @@
 (raw_text) @markup.raw
 
 ; Interpolation expressions
-(interpolation) @punctuation.special
-(expression) @markup.strong
+(interpolation) @markup.strong
+(expression) @markup.raw
 
 ; Import and include statements
 (import_statement) @keyword.import
 (include_statement) @keyword.import
 
-; WeChat specific directive attributes
-((attribute_name) @keyword.directive
-  (#lua-match? @keyword.directive "^wx:"))
 
-; Event binding attributes
-((attribute_name) @keyword
-  (#match? @keyword "^(bind|catch|mut-bind):?"))
+[
+  "<"
+  ">"
+  "</"
+  "/>"
+] @punctuation.bracket
 
-; Data binding attributes
-((attribute_name) @keyword
-  (#match? @keyword "^(model:|data-)"))
+[
+  "\""
+  "'"
+] @punctuation.delimiter
 
-; Special attributes
-((attribute_name) @property
-  (#any-of? @property "slot" "is" "module" "src"))
-
-; Punctuation and operators
-"<" @punctuation.bracket
-">" @punctuation.bracket
-"</" @punctuation.bracket
-"/>" @punctuation.bracket
 "=" @operator
-
-; Quotes in attributes
-"\"" @punctuation.delimiter
-"'" @punctuation.delimiter
