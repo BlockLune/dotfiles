@@ -1,19 +1,14 @@
-(element) @indent.begin
+; inherits: html_tags
 
-(element
-  (self_closing_tag)) @indent.begin
+(block_element) @indent.begin
 
 (template_element) @indent.begin
 
 (wxs_element) @indent.begin
 
-(element
-  (end_tag
+(block_element
+  (block_end_tag
     ">" @indent.end))
-
-(element
-  (self_closing_tag
-    "/>" @indent.end))
 
 (template_element
   (template_end_tag
@@ -23,21 +18,14 @@
   (wxs_end_tag
     ">" @indent.end))
 
-(element
-  (end_tag) @indent.branch)
+(block_element
+  (block_end_tag) @indent.branch)
 
 (template_element
   (template_end_tag) @indent.branch)
 
 (wxs_element
   (wxs_end_tag) @indent.branch)
-
-[
-  ">"
-  "/>"
-] @indent.branch
-
-(comment) @indent.ignore
 
 (import_statement) @indent.ignore
 
