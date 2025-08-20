@@ -120,6 +120,12 @@ require("lazy").setup({
       return not vim.g.vscode
     end,
   },
+  {
+    import = "plugins.pangu",
+    cond = function()
+      return not vim.g.vscode
+    end,
+  },
   { import = "plugins.repeat", cond = true },
   {
     import = "plugins.scrollbar",
