@@ -9,7 +9,7 @@ return {
       install_info = {
         url = "https://github.com/BlockLune/tree-sitter-wxml",
         files = { "src/parser.c", "src/scanner.c" },
-        branch = "main",
+        revision = "v0.1.1",
       },
     }
 
