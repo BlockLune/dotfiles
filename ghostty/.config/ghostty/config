@@ -1,6 +1,6 @@
 # Font
-font-family = "FiraCode Nerd Font"
-font-family = "UbuntuMono Nerd Font"
+font-family = FiraCode Nerd Font Mono
+font-family = Maple Mono NF
 font-size = 14
 
 # Theme with light/dark support

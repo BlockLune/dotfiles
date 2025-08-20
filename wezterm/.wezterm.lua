@@ -49,7 +49,8 @@ end)
 -- Font configuration
 config.font = wezterm.font_with_fallback({
     "FiraCode Nerd Font",
-    "Fira Code",
+    "FiraCode Nerd Font Mono",
+    "Maple Mono NF",
     "PingFang SC",
     "Microsoft YaHei",
     "Noto Sans CJK SC",
