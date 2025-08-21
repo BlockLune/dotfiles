@@ -46,29 +46,16 @@
   (attribute_name) @_attr
   (quoted_attribute_value) @string.special.url)
   (#any-of? @_attr "href" "src")
-  (#set! @string.special.url url @string.special.url))
+  (#offset! @string.special.url 0 1 0 -1))
 
 ; Entity references
 (entity) @string.escape
-
-; Interpolation expressions
-(interpolation) @string.special
-
-; Import and include statements
-(import_statement) @keyword.import
-
-(include_statement) @keyword.import
 
 [
   "<"
   ">"
   "</"
   "/>"
-] @punctuation.bracket
-
-[
-  "\""
-  "'"
-] @punctuation.delimiter
+] @tag.delimiter
 
 "=" @operator
