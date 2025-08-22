@@ -39,6 +39,12 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
+    import = "plugins.blame",
+    cond = function()
+      return not vim.g.vscode
+    end,
+  },
+  {
     import = "plugins.blinkcmp",
     cond = function()
       return not vim.g.vscode
