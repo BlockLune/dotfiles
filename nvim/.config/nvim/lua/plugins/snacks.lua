@@ -48,6 +48,7 @@ return {
       enabled = true,
     },
     terminal = { enabled = true },
+    toggle = { enabled = true },
     zen = { enabled = true },
   },
   keys = {
@@ -417,4 +418,18 @@ return {
       desc = "Close the current terminal",
     },
   },
+  init = function()
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "VeryLazy",
+      callback = function()
+        Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
+        Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
+        Snacks.toggle
+          .option("relativenumber", { name = "Relative Number" })
+          :map("<leader>uL")
+        Snacks.toggle.diagnostics():map("<leader>ud")
+        Snacks.toggle.line_number():map("<leader>ul")
+      end,
+    })
+  end,
 }
