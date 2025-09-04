@@ -6,4 +6,11 @@ return {
     "PanguDisable",
     "PanguEnable",
   },
+  keys = {
+    {
+      "<leader>cp",
+      ":PanguAll<cr>",
+      desc = "[Code] Pangu Format",
+    },
+  },
 }
