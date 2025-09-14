@@ -133,7 +133,15 @@ config.keys = create_key_bindings()
 
 -- Platform-specific configurations
 if is_windows then
-    config.default_prog = { "C:\\Program Files\\PowerShell\\7\\pwsh.exe" }
+    -- https://github.com/wezterm/wezterm/discussions/3346
+    config.wsl_domains = {
+        {
+            name = "wsl:archlinux",
+            distribution = "archlinux",
+        }
+    }
+    config.default_domain = "wsl:archlinux",
+    -- config.default_prog = { "C:\\Program Files\\PowerShell\\7\\pwsh.exe" }
 elseif is_macos then
     config.macos_window_background_blur = 20
     config.window_background_opacity = 0.85
