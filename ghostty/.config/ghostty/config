@@ -4,7 +4,7 @@ font-family = Maple Mono NF
 font-size = 14
 
 # Theme with light/dark support
-theme = light:catppuccin-latte,dark:GitHub-Dark-Dimmed
+theme = light:catppuccin-latte,dark:GitHub Dark Dimmed
 
 # Window padding
 window-padding-x = 16
