@@ -140,7 +140,7 @@ if is_windows then
             distribution = "archlinux",
         }
     }
-    config.default_domain = "wsl:archlinux",
+    config.default_domain = "wsl:archlinux"
     -- config.default_prog = { "C:\\Program Files\\PowerShell\\7\\pwsh.exe" }
 elseif is_macos then
     config.macos_window_background_blur = 20
