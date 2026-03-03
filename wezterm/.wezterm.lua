@@ -59,6 +59,26 @@ config.font = wezterm.font_with_fallback({
 })
 config.font_size = 14
 
+-- Disable default click-to-open-url behavior
+-- See https://code.blarg.ca/gered/dotfiles/commit/de8476a186c24c7f2cfa0cd27b701ec969aefa68
+config.mouse_bindings = {
+	  {
+			  event = { Up = { streak = 1, button = "Left" } },
+		    mods = "NONE",
+		    action = wezterm.action.CompleteSelection("PrimarySelection"),
+	  },
+	  {
+			  event = { Up = { streak = 1, button = "Left" } },
+			  mods = "CTRL",
+		    action = wezterm.action.OpenLinkAtMouseCursor,
+	  },
+	  {
+		    event = { Down = { streak = 1, button = "Left" } },
+		    mods = "CTRL",
+		    action = wezterm.action.Nop,
+	  },
+}
+
 -- Key mappings
 local function create_key_bindings()
     -- Determine modifier key based on platform (cmd on macOS, alt on others)
@@ -133,15 +153,21 @@ config.keys = create_key_bindings()
 
 -- Platform-specific configurations
 if is_windows then
-    -- https://github.com/wezterm/wezterm/discussions/3346
-    config.wsl_domains = {
-        {
-            name = "wsl:archlinux",
-            distribution = "archlinux",
-        }
-    }
-    config.default_domain = "wsl:archlinux"
+    -- If you want to use pwsh:
     -- config.default_prog = { "C:\\Program Files\\PowerShell\\7\\pwsh.exe" }
+
+    -- Or, you want to use nushell:
+    config.default_prog = { "nu" }
+
+    -- Or, to use wsl:
+    -- https://github.com/wezterm/wezterm/discussions/3346
+    -- config.wsl_domains = {
+    --     {
+    --         name = "wsl:archlinux",
+    --         distribution = "archlinux",
+    --     }
+    -- }
+    -- config.default_domain = "wsl:archlinux"
 elseif is_macos then
     config.macos_window_background_blur = 20
     config.window_background_opacity = 0.85
