@@ -2,6 +2,7 @@
 // BlockLune's Zed Settings
 // ------------------------
 {
+  "disable_ai": true,
   "agent": {
     "default_model": {
       "provider": "google",
@@ -21,7 +22,7 @@
   "outline_panel": {
     "dock": "right"
   },
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "tab_size": 2,
   "theme": {
     "mode": "system",
