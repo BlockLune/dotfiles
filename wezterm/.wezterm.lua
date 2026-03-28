@@ -62,21 +62,21 @@ config.font_size = 14
 -- Disable default click-to-open-url behavior
 -- See https://code.blarg.ca/gered/dotfiles/commit/de8476a186c24c7f2cfa0cd27b701ec969aefa68
 config.mouse_bindings = {
-	  {
-			  event = { Up = { streak = 1, button = "Left" } },
-		    mods = "NONE",
-		    action = wezterm.action.CompleteSelection("PrimarySelection"),
-	  },
-	  {
-			  event = { Up = { streak = 1, button = "Left" } },
-			  mods = "CTRL",
-		    action = wezterm.action.OpenLinkAtMouseCursor,
-	  },
-	  {
-		    event = { Down = { streak = 1, button = "Left" } },
-		    mods = "CTRL",
-		    action = wezterm.action.Nop,
-	  },
+    {
+        event = { Up = { streak = 1, button = "Left" } },
+        mods = "NONE",
+        action = wezterm.action.CompleteSelection("PrimarySelection"),
+    },
+    {
+        event = { Up = { streak = 1, button = "Left" } },
+        mods = is_macos and "SUPER" or "CTRL",
+        action = wezterm.action.OpenLinkAtMouseCursor,
+    },
+    {
+        event = { Down = { streak = 1, button = "Left" } },
+        mods = is_macos and "SUPER" or "CTRL",
+        action = wezterm.action.Nop,
+    },
 }
 
 -- Key mappings
