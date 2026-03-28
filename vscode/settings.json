@@ -70,5 +70,6 @@
   },
   "workbench.activityBar.orientation": "vertical",
   "workbench.colorTheme": "GitHub Dark",
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+  "terminal.integrated.stickyScroll.enabled": false
 }
