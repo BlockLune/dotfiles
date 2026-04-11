@@ -1,10 +1,14 @@
 # Font
-font-family = FiraCode Nerd Font Mono
-font-family = Maple Mono NF
+# font-family = FiraCode Nerd Font Mono
+font-family = Maple Mono NF CN
 font-size = 14
 
 # Theme with light/dark support
 theme = light:Catppuccin Latte,dark:GitHub Dark Dimmed
+
+# Window Size
+window-width = 80
+window-height = 24
 
 # Window padding
 window-padding-x = 16
