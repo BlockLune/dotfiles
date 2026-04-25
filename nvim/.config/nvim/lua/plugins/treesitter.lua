@@ -6,20 +6,14 @@ return {
 
   config = function()
     require("nvim-treesitter").install({
-      "c",
-      "css",
-      "html",
-      "javascript",
-      "latex",
       "lua",
       "markdown",
       "markdown_inline",
-      "rust",
-      "typst",
       "vim",
       "vimdoc",
       "yaml",
-      "wxml",
+
+      -- "wxml",
     })
 
     vim.api.nvim_create_autocmd("FileType", {

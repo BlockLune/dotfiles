@@ -57,6 +57,12 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
+    import = "plugins.barbecue",
+    cond = function()
+      return not vim.g.vscode
+    end,
+  },
+  {
     import = "plugins.blame",
     cond = function()
       return not vim.g.vscode
@@ -87,7 +93,7 @@ require("lazy").setup({
     end,
   },
   {
-    import = "plugins.github-theme",
+    import = "plugins.theme",
     cond = function()
       return not vim.g.vscode
     end,
