@@ -1,0 +1,17 @@
+{
+  "lastChangelogVersion": "0.74.0",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-v4-pro",
+  "packages": [
+    "npm:pi-notify",
+    "npm:pi-ghostty",
+    "npm:pi-mcp-adapter",
+    "npm:@counterposition/pi-web-search",
+    "npm:@aliou/pi-guardrails",
+    "npm:pi-mermaid",
+    "npm:pi-free",
+    "npm:pi-chatgpt-usage-status",
+    "npm:@juicesharp/rpiv-ask-user-question"
+  ],
+  "defaultThinkingLevel": "off"
+}
