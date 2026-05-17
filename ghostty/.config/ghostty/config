@@ -15,8 +15,11 @@ window-padding-x = 16
 window-padding-y = 16
 
 # Background
-background-opacity = 0.9
+background-opacity = 0.95
 background-blur = 20
+
+# SSH intergration
+shell-integration-features = ssh-env,ssh-terminfo
 
 # Keybindings
 keybind = super+-=new_split:down
