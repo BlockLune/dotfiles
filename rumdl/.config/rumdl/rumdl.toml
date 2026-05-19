@@ -3,6 +3,7 @@ flavor = "github"
 
 disable = [
   "MD013", # Line length
+  "MD025", # Single h1
   "MD040", # Fenced code language
   "MD041", # First line h1
   "MD047", # File end newline
