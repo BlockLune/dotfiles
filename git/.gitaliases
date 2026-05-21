@@ -29,8 +29,23 @@ alias gcl="git clone --recurse-submodules"
 alias gcp="git cherry-pick"
 
 # git diff
-alias gd="git diff"
+gd() {
+  if command -v difft &>/dev/null; then
+    git -c diff.external=difft diff "$@"
+  else
+    echo "Difft not found. Falling back to 'git diff'."
+    git diff "$@"
+  fi
+}
 alias gds="git diff --stat"
+gdv() {
+  if command -v nvim &>/dev/null; then
+    git -c diff.tool=nvimdiff -c difftool.prompt=false -c "difftool.nvimdiff.cmd=nvim -d \$LOCAL \$REMOTE" difftool "$@"
+  else
+    echo "Nvim not found. Falling back to 'git diff'."
+    git diff "$@"
+  fi
+}
 
 # git fetch
 alias gf="git fetch"
@@ -39,7 +54,14 @@ alias gf="git fetch"
 alias gl="git pull"
 
 # git log
-alias glog="git log --graph --pretty=format:'%C(magenta)%h %C(white) %an %ar%C(auto) %D%n%s%n'"
+glog() {
+  if command -v serie &>/dev/null; then
+    serie "$@"
+  else
+    echo "Serie not found. Falling back to 'git log ...'."
+    git log --graph --pretty=format:'%C(magenta)%h %C(white) %an %ar%C(auto) %D%n%s%n' "$@"
+  fi
+}
 
 # git merge
 alias gm="git merge"

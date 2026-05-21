@@ -8,7 +8,6 @@
   name = BlockLune
   email = 39331194+BlockLune@users.noreply.github.com
 [core]
-  pager = delta       # Use delta as the default pager for colored output
   quotepath = false   # Disable quoting of pathnames with special characters
   compression = 9     # Set maximum compression level (0-9)
   preloadindex = true # Enable index preloading for performance improvement
@@ -23,11 +22,7 @@
   showStash = true         # Show stash information
   showUntrackedFiles = all # Show all untracked files
 [interactive]
-  diffFilter = delta --color-only # Use delta to filter and beautify diffs
   singlekey = true                # Allow single-key input for interactive commands
-[delta]
-  navigate = true # Navigate diff sections using n and N
-  light = false   # Set to true for terminals with light backgrounds
 [merge]
   conflictstyle = diff3 # Show three-way diff format for conflicts
 [diff]
@@ -65,11 +60,6 @@
 [pager]
   branch = false
   tag = false
-[url "git@github.com:BlockLune/"]
-  insteadOf = "bl:"
-[url "git@github.com:"]
-  insteadOF ="gh:"
-
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
