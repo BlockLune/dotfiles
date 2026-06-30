@@ -45,11 +45,8 @@ alias rg="rg --smart-case --color=auto"
 # neovide
 alias nv="nohup neovide &"
 
-# windsurf
-alias ws="windsurf"
-
-# cursor
-alias cs="cursor"
+# python
+alias python="python3"
 
 # git
 [[ -f ~/.gitaliases ]] && source ~/.gitaliases
