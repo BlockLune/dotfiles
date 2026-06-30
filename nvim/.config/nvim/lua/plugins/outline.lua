@@ -24,7 +24,8 @@ return {
         end
 
         local normal_windows = vim.tbl_filter(function(win)
-          return vim.api.nvim_win_is_valid(win) and vim.api.nvim_win_get_config(win).relative == ""
+          return vim.api.nvim_win_is_valid(win)
+            and vim.api.nvim_win_get_config(win).relative == ""
         end, vim.api.nvim_tabpage_list_wins(0))
 
         if #normal_windows ~= 1 then

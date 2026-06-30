@@ -6,6 +6,7 @@ return {
       "mason-org/mason.nvim",
       opts = {
         ensure_installed = {
+          "rumdl", -- markdown
           "stylua", -- Lua
         },
       },
@@ -27,7 +28,6 @@ return {
     vim.diagnostic.config({
       virtual_text = true,
     })
-
 
     -- WXML (Wechat Miniprogram)
     -- vim.filetype.add({
