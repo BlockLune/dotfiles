@@ -4,7 +4,7 @@ font-family = Maple Mono NF CN
 font-size = 14
 
 # Theme with light/dark support
-theme = light:Catppuccin Latte,dark:GitHub Dark Dimmed
+theme = light:Catppuccin Latte,dark:Catppuccin Mocha
 
 # Window Size
 window-width = 80

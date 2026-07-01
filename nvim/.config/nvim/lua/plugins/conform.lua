@@ -16,6 +16,7 @@ return {
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },
+      markdown = { "rumdl" },
       rust = { "rust_analyzer" },
     },
     default_format_opts = {

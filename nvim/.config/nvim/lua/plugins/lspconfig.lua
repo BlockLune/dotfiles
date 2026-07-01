@@ -28,6 +28,7 @@ return {
     vim.diagnostic.config({
       virtual_text = true,
     })
+    vim.lsp.enable("sourcekit")
 
     -- WXML (Wechat Miniprogram)
     -- vim.filetype.add({

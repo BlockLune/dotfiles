@@ -1,22 +1,18 @@
 {
-  "lastChangelogVersion": "0.74.1",
+  "lastChangelogVersion": "0.80.2",
   "defaultProvider": "deepseek",
-  "defaultModel": "deepseek-v4-pro",
+  "defaultModel": "deepseek-v4-flash",
   "packages": [
     "npm:pi-notify",
     "npm:pi-ghostty",
     "npm:pi-mcp-adapter",
-    "npm:@aliou/pi-guardrails",
     "npm:pi-mermaid",
-    "npm:pi-free",
-    "npm:pi-chatgpt-usage-status",
     "npm:@juicesharp/rpiv-ask-user-question",
-    "npm:@juicesharp/rpiv-btw",
     "npm:@tintinweb/pi-subagents",
     "npm:pi-system-prompt",
     "npm:@kinarajv/pi-tps-extensions",
     "npm:@juicesharp/rpiv-web-tools",
     "npm:pi-simplify"
   ],
-  "defaultThinkingLevel": "off"
+  "defaultThinkingLevel": "high"
 }
