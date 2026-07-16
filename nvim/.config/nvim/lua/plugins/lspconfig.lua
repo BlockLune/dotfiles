@@ -28,21 +28,37 @@ return {
     vim.diagnostic.config({
       virtual_text = true,
     })
+
+    -- Apple sourcekit (swift, objective-c, etc.)
     vim.lsp.enable("sourcekit")
 
-    -- WXML (Wechat Miniprogram)
-    -- vim.filetype.add({
-    --   extension = {
-    --     wxml = "wxml",
-    --   },
-    -- })
-
-    -- Run `npm install -g wxml-langserver` to install the lang server
-    -- vim.lsp.config["wxml-langserver"] = {
-    --   cmd = { "wxml-langserver", "--stdio" },
-    --   filetypes = { "wxml" },
-    --   root_markers = { "package.json", ".git" },
-    -- }
-    -- vim.lsp.enable("wxml-langserver")
+    -- Wechat Miniprogram
+    vim.filetype.add({
+      extension = {
+        wxml = "wxml",
+        wxss = "wxss",
+      },
+    })
+    vim.lsp.config("glass_easel_analyzer", {
+      cmd = { "/path/to/glass-easel-analyzer-repo/target/release/glass-easel-analyzer" },
+      filetypes = { "wxml", "wxss", "css", "less", "scss" },
+      root_markers = { "app.json", "plugin.json" },
+      init_options = {
+        -- The server expects the TOML contents here, not a path.
+        backendConfig = table.concat(vim.fn.readfile(
+          "/path/to/glass-easel-analyzer-repo/backend-configuration/web/web.toml"
+        ), "\n"),
+        -- Required by glass-easel-analyzer; populated with the project URI below.
+        workspaceFolders = {},
+        ignorePaths = { "node_modules" },
+        enableOtherSs = false,
+      },
+      before_init = function(params, config)
+        params.initializationOptions.workspaceFolders = {
+          vim.uri_from_fname(config.root_dir),
+        }
+      end,
+    })
+    vim.lsp.enable("glass_easel_analyzer")
   end,
 }
