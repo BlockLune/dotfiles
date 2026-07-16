@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.80.2",
-  "defaultProvider": "deepseek",
-  "defaultModel": "deepseek-v4-flash",
+  "lastChangelogVersion": "0.80.6",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.6-luna",
   "packages": [
     "npm:pi-notify",
     "npm:pi-ghostty",
@@ -12,7 +12,12 @@
     "npm:pi-system-prompt",
     "npm:@kinarajv/pi-tps-extensions",
     "npm:@juicesharp/rpiv-web-tools",
-    "npm:pi-simplify"
+    "npm:pi-simplify",
+    "npm:@narumitw/pi-plan-mode",
+    "npm:pi-rewind-hook",
+    "npm:@narumitw/pi-codex-usage"
   ],
-  "defaultThinkingLevel": "high"
+  "defaultThinkingLevel": "high",
+  "theme": "dark",
+  "quietStartup": true
 }
