@@ -18,6 +18,7 @@ return {
       lua = { "stylua" },
       markdown = { "rumdl" },
       rust = { "rust_analyzer" },
+      swift = { "swiftformat" },
     },
     default_format_opts = {
       lsp_format = "fallback",

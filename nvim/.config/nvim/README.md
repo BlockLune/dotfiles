@@ -43,6 +43,22 @@
 └── README.md
 ```
 
+## iOS / Swift Projects
+
+Install the external tools first:
+
+```sh
+brew install xcode-build-server swiftformat
+```
+
+Then open an iOS/macOS project in Neovim and generate `buildServer.json` and necessary files from the project root:
+
+```vim
+:XcodebuildSetup
+```
+
+`sourcekit-lsp` uses `buildServer.json` to understand Xcode project/workspace structure.
+
 ## References
 
 - [Neovim Lazy Lua IDE - my simple but powerful setup (98% upvoted)](https://youtu.be/VljhZ0e9zGE)

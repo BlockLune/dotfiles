@@ -56,7 +56,7 @@ alias gl="git pull"
 # git log
 glog() {
   if command -v serie &>/dev/null; then
-    serie "$@"
+    serie -o topo -i head -n 100 "$@"
   else
     echo "Serie not found. Falling back to 'git log ...'."
     git log --graph --pretty=format:'%C(magenta)%h %C(white) %an %ar%C(auto) %D%n%s%n' "$@"

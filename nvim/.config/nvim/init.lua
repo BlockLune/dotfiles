@@ -28,7 +28,10 @@ if vim.fn.executable(clip) then
   }
 
   opts.group = vim.api.nvim_create_augroup("WSLYank", {})
-  vim.api.nvim_create_autocmd("TextYankPost", { group = opts.group, callback = opts.callback })
+  vim.api.nvim_create_autocmd(
+    "TextYankPost",
+    { group = opts.group, callback = opts.callback }
+  )
 end
 
 -- Load Plugins
@@ -211,6 +214,12 @@ require("lazy").setup({
   },
   {
     import = "plugins.whichkey",
+    cond = function()
+      return not vim.g.vscode
+    end,
+  },
+  {
+    import = "plugins.xcodebuild",
     cond = function()
       return not vim.g.vscode
     end,
