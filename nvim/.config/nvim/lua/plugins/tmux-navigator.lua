@@ -5,6 +5,6 @@ return {
     vim.g.tmux_navigator_no_mappings = 1
   end,
   config = function()
-    dofile(vim.fn.expand("/opt/vim-herdr-navigation/editor/nvim.lua"))
+    dofile(vim.fn.expand("~/.local/share/herdr/vim-herdr-navigation/editor/nvim.lua"))
   end,
 }
