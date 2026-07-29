@@ -31,3 +31,6 @@ description = "navigate right (vim/herdr)"
 
 [ui]
 sidebar_start_collapsed = true
+
+[experimental]
+kitty_graphics = true
