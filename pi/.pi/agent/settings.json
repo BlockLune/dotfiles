@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.80.10",
+  "lastChangelogVersion": "0.82.1",
   "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.6-luna",
+  "defaultModel": "gpt-5.6-sol",
   "packages": [
     "npm:pi-notify",
     "npm:pi-ghostty",
@@ -15,7 +15,11 @@
     "npm:pi-simplify",
     "npm:@narumitw/pi-plan-mode",
     "npm:pi-rewind-hook",
-    "npm:@narumitw/pi-codex-usage"
+    "npm:@narumitw/pi-usage",
+    "npm:pi-discuss-mode",
+    "npm:@pi-kaush/pi-inline-skill-identifier",
+    "npm:@dietrichgebert/ponytail",
+    "npm:pi-language-tutor"
   ],
   "defaultThinkingLevel": "high",
   "theme": "light",
