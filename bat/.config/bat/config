@@ -1,3 +1,4 @@
---theme="Catppuccin Mocha"
+--theme-light="ansi"
+--theme-dark="Catppuccin Mocha"
 --paging=never
 --plain
