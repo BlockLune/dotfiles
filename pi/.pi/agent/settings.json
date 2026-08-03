@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.82.1",
-  "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.6-sol",
+  "lastChangelogVersion": "0.83.0",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-v4-flash",
   "packages": [
     "npm:pi-notify",
     "npm:pi-ghostty",
@@ -19,9 +19,13 @@
     "npm:pi-discuss-mode",
     "npm:@pi-kaush/pi-inline-skill-identifier",
     "npm:@dietrichgebert/ponytail",
-    "npm:pi-language-tutor"
+    "npm:pi-language-tutor",
+    "npm:@whynothugo/pi-auto-theme",
+    "git:github.com/algal/pi-openai-server-compaction"
   ],
-  "defaultThinkingLevel": "high",
-  "theme": "light",
-  "quietStartup": true
+  "defaultThinkingLevel": "max",
+  "quietStartup": true,
+  "hideThinkingBlock": true,
+  "steeringMode": "all",
+  "followUpMode": "all"
 }
