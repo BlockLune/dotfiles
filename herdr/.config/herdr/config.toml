@@ -5,6 +5,16 @@ auto_switch = true
 light_name = "one-light"
 dark_name = "dracula"
 
+[keys]
+copy_mode = "prefix+c"
+new_tab = "prefix+n"
+previous_tab = "prefix+["
+next_tab = "prefix+]"
+previous_workspace = "prefix+{"
+next_workspace = "prefix+}"
+previous_agent = "prefix+("
+next_agent = "prefix+)"
+
 [[keys.command]]
 key = "ctrl+h"
 type = "plugin_action"
