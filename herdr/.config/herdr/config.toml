@@ -39,8 +39,5 @@ type = "plugin_action"
 command = "vim-herdr-navigation.right"
 description = "navigate right (vim/herdr)"
 
-[ui]
-sidebar_start_collapsed = true
-
 [experimental]
 kitty_graphics = true
