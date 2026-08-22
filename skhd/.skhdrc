@@ -1,2 +1,2 @@
-cmd + ctrl - t : open -a wezterm
-cmd + ctrl - return : open -a Arc
+cmd - return : open -a ghostty
+cmd + shift - return : open -a Arc
