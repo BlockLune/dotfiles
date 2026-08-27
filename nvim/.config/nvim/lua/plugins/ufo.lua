@@ -3,10 +3,6 @@ return {
   dependencies = { "kevinhwang91/promise-async" },
   event = "VeryLazy",
   opts = {
-    provider_selector = function(_, _, _)
-      return { "treesitter", "indent" }
-    end,
-
     open_fold_hl_timeout = 0,
     fold_virt_text_handler = function(virtText, lnum, endLnum, width, truncate)
       local newVirtText = {}
