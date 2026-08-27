@@ -59,9 +59,14 @@ return {
     {
       "<leader><space>",
       function()
-        Snacks.picker.smart()
+        Snacks.picker.pick({
+          multi = { "files", "grep" },
+          live = true,
+          focus = "input",
+          title = "Files + Content",
+        })
       end,
-      desc = "Smart Find Files",
+      desc = "Find Files + Content",
     },
     {
       "<leader>,",
