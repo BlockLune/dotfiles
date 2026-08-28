@@ -28,5 +28,6 @@
   "quietStartup": true,
   "hideThinkingBlock": true,
   "steeringMode": "all",
-  "followUpMode": "all"
+  "followUpMode": "all",
+  "tuiMode": "fullscreen"
 }

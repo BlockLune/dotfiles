@@ -1,5 +1,7 @@
 return {
   "cappyzawa/trim.nvim",
   event = "BufWritePre",
-  opts = {},
+  opts = {
+    ft_blocklist = { "objc", "objcpp" },
+  },
 }
