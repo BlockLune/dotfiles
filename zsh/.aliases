@@ -50,6 +50,9 @@ fi
 # neovide
 alias nv="nohup neovide &"
 
+# open
+alias o="open"
+
 # python
 alias python="python3"
 

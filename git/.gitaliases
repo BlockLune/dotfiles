@@ -87,6 +87,12 @@ alias grh="git reset --hard"
 # git show
 alias gshow="git show"
 
+# git tag
+alias gt="git tag"
+
+# git worktree
+alias gwt="git worktree"
+
 # git status
 alias gss="git status --short"
 
