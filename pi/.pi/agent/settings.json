@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.84.3",
+  "lastChangelogVersion": "0.85.1",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.6-sol",
   "packages": [
@@ -20,7 +20,6 @@
     "npm:@pi-kaush/pi-inline-skill-identifier",
     "npm:@dietrichgebert/ponytail",
     "npm:pi-language-tutor",
-    "npm:@whynothugo/pi-auto-theme",
     "git:github.com/algal/pi-openai-server-compaction",
     "npm:@ff-labs/pi-fff"
   ],
@@ -29,5 +28,13 @@
   "hideThinkingBlock": true,
   "steeringMode": "all",
   "followUpMode": "all",
-  "tuiMode": "fullscreen"
+  "tuiMode": "fullscreen",
+  "defaultTools": [
+    "read",
+    "bash",
+    "edit",
+    "write",
+    "ls"
+  ],
+  "theme": "light/dark"
 }
