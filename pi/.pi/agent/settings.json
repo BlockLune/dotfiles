@@ -1,7 +1,5 @@
 {
-  "lastChangelogVersion": "0.85.1",
-  "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.6-sol",
+  "lastChangelogVersion": "1.4.0",
   "packages": [
     "git:github.com/algal/pi-openai-server-compaction",
     "npm:@ff-labs/pi-fff",
@@ -9,11 +7,12 @@
     "npm:@kinarajv/pi-tps-extensions",
     "npm:@narumitw/pi-usage",
     "npm:@pi-kaush/pi-inline-skill-identifier",
-    "npm:@tintinweb/pi-subagents",
+    "npm:@plannotator/pi-extension",
+    "npm:pi-cc-extensions",
+    "npm:pi-context-view",
     "npm:pi-language-tutor",
-    "npm:pi-mcp-adapter",
     "npm:pi-rewind-hook",
-    "npm:pi-system-prompt",
+    "npm:pi-subagent-manager",
     "npm:pi-web-access"
   ],
   "defaultThinkingLevel": "high",
@@ -23,11 +22,13 @@
   "followUpMode": "all",
   "tuiMode": "fullscreen",
   "defaultTools": [
-    "read",
     "bash",
+    "codemode",
     "edit",
-    "write",
-    "ls"
+    "ls",
+    "read",
+    "write"
   ],
-  "theme": "light/dark"
+  "theme": "light/dark",
+  "enabledModels": []
 }
