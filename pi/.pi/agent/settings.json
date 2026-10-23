@@ -4,7 +4,6 @@
     "git:github.com/algal/pi-openai-server-compaction",
     "npm:@ff-labs/pi-fff",
     "npm:@juicesharp/rpiv-ask-user-question",
-    "npm:@kinarajv/pi-tps-extensions",
     "npm:@narumitw/pi-usage",
     "npm:@pi-kaush/pi-inline-skill-identifier",
     "npm:@plannotator/pi-extension",
@@ -29,6 +28,5 @@
     "read",
     "write"
   ],
-  "theme": "light/dark",
-  "enabledModels": []
+  "theme": "light/dark"
 }
