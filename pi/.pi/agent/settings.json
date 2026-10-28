@@ -7,6 +7,7 @@
     "npm:@narumitw/pi-usage",
     "npm:@pi-kaush/pi-inline-skill-identifier",
     "npm:@plannotator/pi-extension",
+    "npm:pi-antigravity",
     "npm:pi-cc-extensions",
     "npm:pi-context-view",
     "npm:pi-language-tutor",
@@ -28,5 +29,7 @@
     "read",
     "write"
   ],
-  "theme": "light/dark"
+  "theme": "light/dark",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-flash"
 }
