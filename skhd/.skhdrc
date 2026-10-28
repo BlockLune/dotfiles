@@ -1,2 +1,2 @@
-cmd - return : open -a ghostty
-cmd + shift - return : open -a Arc
+cmd - return : open -a kitty
+cmd + shift - return : open -a Helium
