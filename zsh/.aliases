@@ -53,6 +53,21 @@ alias nv="nohup neovide &"
 # open
 alias o="open"
 
+# clipboard
+# macOS has pbcopy/pbpaste built in; Linux needs a helper.
+if [[ "$(uname -s)" != "Darwin" ]]; then
+  if command -v wl-copy &>/dev/null; then # Wayland
+    alias pbcopy="wl-copy"
+    alias pbpaste="wl-paste --no-newline"
+  elif command -v xclip &>/dev/null; then # X11
+    alias pbcopy="xclip -selection clipboard"
+    alias pbpaste="xclip -selection clipboard -o"
+  elif command -v xsel &>/dev/null; then # X11 fallback
+    alias pbcopy="xsel --clipboard --input"
+    alias pbpaste="xsel --clipboard --output"
+  fi
+fi
+
 # python
 alias python="python3"
 
