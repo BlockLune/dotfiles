@@ -32,42 +32,19 @@ return {
     -- Apple sourcekit (swift, objective-c, etc.)
     vim.lsp.enable("sourcekit")
 
-    -- Wechat Miniprogram
+    -- WeChat Mini Program
     vim.filetype.add({
       extension = {
         wxml = "wxml",
-        wxss = "wxss",
+        wxss = "css",
+        wxs = "javascript",
       },
     })
-    vim.lsp.config("glass_easel_analyzer", {
-      cmd = { "/opt/glass-easel-analyzer/target/release/glass-easel-analyzer" },
-      filetypes = { "wxml", "wxss", "css", "less", "scss" },
-      root_markers = { "app.json", "plugin.json" },
-      -- Do not start this project-scoped server when no project root is found.
-      workspace_required = true,
-      init_options = {
-        -- The server expects the TOML contents here, not a path.
-        backendConfig = table.concat(
-          vim.fn.readfile(
-            "/opt/glass-easel-analyzer/backend-configuration/web/web.toml"
-          ),
-          "\n"
-        ),
-        -- Required by glass-easel-analyzer; populated with the project URI below.
-        workspaceFolders = {},
-        ignorePaths = { "node_modules" },
-        enableOtherSs = true,
-      },
-      before_init = function(params, config)
-        if not config.root_dir then
-          return
-        end
-
-        params.initializationOptions.workspaceFolders = {
-          vim.uri_from_fname(config.root_dir),
-        }
-      end,
+    vim.lsp.config("wxmls", {
+      cmd = { "wxmls" },
+      filetypes = { "wxml" },
+      root_markers = { "app.json", "project.config.json", ".git" },
     })
-    vim.lsp.enable("glass_easel_analyzer")
+    vim.lsp.enable("wxmls")
   end,
 }
