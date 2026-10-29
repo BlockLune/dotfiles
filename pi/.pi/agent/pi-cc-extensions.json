@@ -1,3 +1,4 @@
 {
-  "enableContextCommand": false
+  "enableContextCommand": false,
+  "enableEditorPrefix": false
 }
