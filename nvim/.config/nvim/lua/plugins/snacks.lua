@@ -15,10 +15,6 @@ return {
       enabled = true,
     },
     git = { enabled = true },
-    image = {
-      enabled = true,
-      doc = { enabled = false },
-    },
     indent = {
       animate = { enabled = false },
       chunk = { enabled = true },
